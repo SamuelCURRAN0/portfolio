@@ -10,6 +10,7 @@ import { statusColors } from '../../models/project-tag.enum';
   templateUrl: './projet.component.html',
   styleUrl: './projet.component.scss'
 })
+
 export class ProjetComponent {
   @Input() project!: Project;
   statusColors = statusColors;

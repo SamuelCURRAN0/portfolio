@@ -1,4 +1,4 @@
-import { ProjectTag } from './project-tag.enum'; // Adjust the import path as necessary
+import { ProjectTag } from './project-tag.enum'; 
 export class Project {
     constructor(
         public nom: string,

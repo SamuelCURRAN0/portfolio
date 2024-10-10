@@ -1,3 +1,11 @@
 <div>
-    <h2>Diplômes</h2>
+    <h2>Diplômes</h2><a href="https://www.youtube.com/watch?v=eEybqzuh6Z0">https://www.youtube.com/watch?v=eEybqzuh6Z0</a>
+    <div class="diplomes-list">
+        <div *ngFor="let diplome of diplomes" class="box-border">
+            <div class="box-diplome">
+                <h3>{{diplome.nom}}</h3>
+                <p>{{diplome.description}}</p>
+            </div>
+        </div>
+    </div>
 </div>

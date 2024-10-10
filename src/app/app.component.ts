@@ -10,7 +10,13 @@ import { ProjetsListeComponent } from './components/projets-liste/projets-liste.
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,CompetencesListeComponent,ContactComponent,DiplomesListeComponent,MainMenuComponent,ProjetComponent,ProjetsListeComponent],
+  imports: [RouterOutlet,
+    CompetencesListeComponent,
+    ContactComponent,
+    DiplomesListeComponent,
+    MainMenuComponent,
+    ProjetComponent,
+    ProjetsListeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

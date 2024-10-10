@@ -1,0 +1,22 @@
+.diplomes-list {
+    border-left: none; 
+    background: linear-gradient(to bottom, rgb(189, 189, 189) 40%, transparent 40%) 0 0 / 3px 20px repeat-y;
+}
+.box-border{
+    border-left: rgb(189, 189, 189) solid 3px;
+}
+.box-diplome {
+    width: 40em;
+    color: #333;
+    border: 0.2vw solid rgb(238, 238, 238);
+    border-radius: 1em;
+    height:10em;
+    box-shadow: 0 1em 1em rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 40px;
+}
+
+.line {
+    width: 1em;
+    height: 100%;
+}
