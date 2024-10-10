@@ -4,4 +4,11 @@
     </div>
     <h3>{{ project.nom }}</h3>
     <p>{{ project.description }}</p>
+    <div class="tags">
+        <span *ngFor="let tag of project.tags" 
+        class="tag" 
+        [ngStyle]="{'background-color': statusColors[tag]}">
+        {{ tag }}
+  </span>
+    </div>
 </div>

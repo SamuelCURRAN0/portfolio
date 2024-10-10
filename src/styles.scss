@@ -1,8 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif; 
     margin: 0;
+    user-select: none; /* Prevents text selection */
+    -webkit-user-select: none; /* For Safari */
+    -moz-user-select: none; /* For Firefox */
+    -ms-user-select: none; /* For Internet Explorer/Edge */
 }
 #page {
     margin-left: 10vw;
@@ -11,6 +15,7 @@ body {
 }
 
 h2 {
+    margin-top: 4em;
     font-size: 24px;
     margin-bottom: 20px;
 }
@@ -23,18 +28,15 @@ img {
     margin: 20px auto; 
 }
 
-/* Styling Paragraphs */
 p {
     font-size: 18px; 
     margin: 10px 0;
 }
 
-/* Styling Icons */
 i {
     margin-right: 8px;
 }
 
-/* Styling Links */
 a {
     text-decoration: none;
     color: #007bff;

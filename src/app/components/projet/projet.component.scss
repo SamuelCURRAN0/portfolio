@@ -14,3 +14,34 @@
     padding-top: 1em;
     padding-bottom: 1em;
 }
+
+.tags {
+    display: flex; /* Use flexbox to arrange tags in a row */
+    flex-wrap: wrap; /* Allow wrapping to the next line if necessary */
+    gap: 10px; /* Add spacing between tags */
+    margin-top: 10px; /* Add space above the tags */
+}
+
+.tag {
+    background-color: #e0e0e0; /* Default background color for the tag */
+    color: #333; /* Default text color */
+    padding: 8px 12px; /* Padding around the text */
+    border-radius: 20px; /* Make the tag rounded */
+    font-size: 14px; /* Adjust font size */
+    display: inline-block; /* Ensure the tags stay inline */
+    white-space: nowrap; /* Prevent tags from wrapping */
+    transition: background-color 0.3s, transform 0.3s, font-size 0.3s; /* Smooth transition for hover effects */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Dynamic color class for better visibility */
+.tag.dynamic {
+    color: #fff; /* White text for better contrast */
+}
+
+/* Hover effect */
+.tag:hover {
+    transform: scale(1.05); /* Slightly enlarge the tag on hover */
+    opacity: 0.9; /* Slightly reduce opacity on hover */
+    font-size: 16px; /* Increase font size on hover */
+}
