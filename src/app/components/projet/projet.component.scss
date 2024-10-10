@@ -1,0 +1,16 @@
+.project {
+    border: 0.2vw solid rgb(238, 238, 238);
+    border-radius: 1em;
+    width:20em;
+    height:30em;
+    flex: 1 1 200em;
+    box-shadow: 0 1em 1em rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+.img-container{
+    max-height: 20em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}

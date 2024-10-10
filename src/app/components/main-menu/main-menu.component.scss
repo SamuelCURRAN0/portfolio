@@ -1,0 +1,25 @@
+// Main Menu Styles
+.main-menu {
+    display: flex;
+    flex-direction: column; // Align elements vertically
+    justify-content: center; // Center content vertically
+    align-items: center; // Center content horizontally
+    height: 100vh; // Full height of the viewport
+    background-color: #e7e7e7; // Background color for the block
+    color: rgb(0, 0, 0); // Text color
+    text-align: center; // Center align text
+
+    // Styling for Name
+    .name {
+        font-size: 48px; // Large font size for the name
+        margin: 0; // Remove default margin
+        font-weight: bold; // Make text bold
+    }
+
+    // Styling for Portfolio
+    .portfolio {
+        font-size: 24px; // Smaller font size for the portfolio
+        margin-top: 10px; // Space between name and portfolio
+        font-weight: normal; // Regular weight
+    }
+}
