@@ -1,11 +1,24 @@
-<div>
-    <h2>Diplômes</h2><a href="https://www.youtube.com/watch?v=eEybqzuh6Z0">https://www.youtube.com/watch?v=eEybqzuh6Z0</a>
-    <div class="diplomes-list">
-        <div *ngFor="let diplome of diplomes" class="box-border">
-            <div class="box-diplome">
-                <h3>{{diplome.nom}}</h3>
-                <p>{{diplome.description}}</p>
-            </div>
-        </div>
-    </div>
+<h2>Diplômes</h2>
+
+<div class="container">
+    <ul>
+        <ng-container *ngFor="let diplome of diplomes">
+            <li  class="box-border">
+                <span></span>
+                <div class="title">{{diplome.nom}}
+                </div>
+                <div class="info">
+                    {{diplome.description}}
+                </div>
+                <div class="time">
+                    <span>
+                        {{diplome.anneeDeFin}}
+                    </span>
+                    <span>
+                        {{diplome.anneeDeDebut}}
+                    </span>
+                </div>
+            </li>
+        </ng-container>
+</ul>
 </div>
