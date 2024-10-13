@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { AProposComponent } from './components/a-propos/a-propos.component';
+import { BoxComponent } from './components/box/box.component';
 import { CompetencesListeComponent } from './components/competences-liste/competences-liste.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { DiplomesListeComponent } from './components/diplomes-liste/diplomes-liste.component';
@@ -10,13 +12,17 @@ import { ProjetsListeComponent } from './components/projets-liste/projets-liste.
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,
+  imports: [
+    RouterOutlet,
+    AProposComponent,
+    BoxComponent,
     CompetencesListeComponent,
     ContactComponent,
     DiplomesListeComponent,
     MainMenuComponent,
     ProjetComponent,
-    ProjetsListeComponent],
+    ProjetsListeComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

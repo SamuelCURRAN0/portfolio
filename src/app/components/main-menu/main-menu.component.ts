@@ -1,13 +1,56 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, HostListener , OnDestroy  } from '@angular/core';
+import { BoxComponent } from '../box/box.component';
 
 @Component({
   selector: 'app-main-menu',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, BoxComponent],
   templateUrl: './main-menu.component.html',
-  styleUrl: './main-menu.component.scss'
+  styleUrls: ['./main-menu.component.scss']  // Corriger `styleUrl` en `styleUrls`
 })
-export class MainMenuComponent {
+export class MainMenuComponent implements AfterViewInit {
+  moveBoxes !: NodeListOf<Element>;
+  constructor() { }
+  private mouseInterval: any;
+  mouseX: number = 0;
+  mouseY: number = 0;
 
+  ngAfterViewInit(): void {
+    this.moveBoxes = document.querySelectorAll('.moveBox');
+  
+    /*this.moveBoxes.forEach((box: any) => {
+      const rect = box.getBoundingClientRect(); // Obtient les dimensions et la position
+      console.log(`Position de l'élément:`);
+      console.log(`- Haut: ${rect.top}`);
+      console.log(`- Droite: ${rect.right}`);
+      console.log(`- Bas: ${rect.bottom}`);
+      console.log(`- Gauche: ${rect.left}`);
+      console.log(`- Largeur: ${rect.width}`);
+      console.log(`- Hauteur: ${rect.height}`);
+
+    });*/
+  }
+
+  @HostListener('mousemove', ['$event']) onMouseMove(event: MouseEvent) {
+    this.mouseX = event.clientX;
+    this.mouseY = event.clientY;
+    this.UpdateBox();
+  }
+  UpdateBox() : void {
+    this.moveBoxes.forEach((box: any) => {
+      this.calculerLaDistance(box);
+    });
+  }
+  calculerLaDistance(monElement:Element) : void{
+    const rect = monElement.getBoundingClientRect();
+    const posX = rect.left;
+    const posY = rect.top;
+    const distance = Math.sqrt(
+      Math.pow(posX - this.mouseX, 2) + Math.pow(posY - this.mouseY, 2)
+    );
+    if(distance < 10) {
+      console.log(monElement);
+    }
+  }
 }
