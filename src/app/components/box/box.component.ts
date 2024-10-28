@@ -10,9 +10,9 @@ import { RandomNumberService } from '../../services/random-number.service';
 })
 export class BoxComponent implements AfterViewInit {
 
-  timeAnimation: number = 5;
-  top: number = 10;
-  left: number = 6;
+  timeAnimation = 5;
+  top = 10;
+  left = 6;
 
   constructor(private randomNumberService: RandomNumberService, 
               private elementRef: ElementRef,

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, AfterViewInit, HostListener , OnDestroy  } from '@angular/core';
+import { Component, AfterViewInit, HostListener  } from '@angular/core';
 import { BoxComponent } from '../box/box.component';
 
 @Component({
@@ -13,11 +13,11 @@ export class MainMenuComponent implements AfterViewInit {
   moveBoxes !: NodeListOf<Element>;
   constructor() { }
   private mouseInterval: any;
-  mouseX: number = 0;
-  mouseY: number = 0;
+  mouseX = 0;
+  mouseY = 0;
 
   ngAfterViewInit(): void {
-    this.moveBoxes = document.querySelectorAll('.moveBox');
+    //this.moveBoxes = document.querySelectorAll('.moveBox');
   
     /*this.moveBoxes.forEach((box: any) => {
       const rect = box.getBoundingClientRect(); // Obtient les dimensions et la position
@@ -38,6 +38,9 @@ export class MainMenuComponent implements AfterViewInit {
     this.UpdateBox();
   }
   UpdateBox() : void {
+    if (this.moveBoxes === undefined) {
+      return;
+    }
     this.moveBoxes.forEach((box: any) => {
       this.calculerLaDistance(box);
     });

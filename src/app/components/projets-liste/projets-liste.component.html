@@ -1,6 +1,29 @@
 <div>
-    <h2>Projets</h2>
-    <div class="project-list">
-        <app-projet *ngFor="let project of projects" [project]="project"></app-projet>
+  <h2>Projets</h2>
+  <div class="dropdown">
+    <button
+      class="btn btn-secondary dropdown-toggle"
+      type="button"
+      id="dropdownMenuButton"
+      (click)="toggleDropdown()"
+    >
+      Filtrer
+    </button>
+    <div *ngIf="dropdownVisible" class="dropdown-list">
+      <ng-container *ngFor="let tag of projectsTags">
+        <div class="dropdown-item" (click)="toggleCheckbox(tag)">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            [checked]="checkboxStates[tag]"
+          />
+          {{ tag }}
+        </div>
+      </ng-container>
     </div>
+  </div>
+  <div class="project-list">
+    <app-projet *ngFor="let project of filteredProjects()" [project]="project"></app-projet>
+    <h3 *ngIf="filteredProjects().length === 0">Aucun projet ne correspond à votre recherche</h3>
+  </div>
 </div>
