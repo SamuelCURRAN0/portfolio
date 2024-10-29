@@ -3,11 +3,13 @@ import { Component, HostListener } from '@angular/core';
 import { Project } from '../../models/project.model'; 
 import { ProjectTag } from '../../models/project-tag.enum'; 
 import { ProjetComponent } from '../projet/projet.component';
+import { ProjetDetailComponent } from '../projet-detail/projet-detail.component';
+import { TranslationContentService } from '../../services/translation-content.service';
 
 @Component({
   selector: 'app-projets-liste',
   standalone: true,
-  imports: [CommonModule, ProjetComponent],
+  imports: [CommonModule, ProjetComponent, ProjetDetailComponent],
   templateUrl: './projets-liste.component.html',
   styleUrls: ['./projets-liste.component.scss'] // Corrected to 'styleUrls'
 })
@@ -24,7 +26,12 @@ export class ProjetsListeComponent {
 
   projectsTags: string[] = [];
   checkboxStates: { [key: string]: boolean } = {};
+  selectedProject: Project | null = null; // Store the selected project here
 
+  constructor(public translationContentService: TranslationContentService) { }
+  selectProject(project: Project) {
+    this.selectedProject = project;
+  }
   ngOnInit() {
     for (const project of this.projects) {
       for (const tag of project.tags) {
@@ -36,6 +43,10 @@ export class ProjetsListeComponent {
     this.projectsTags.forEach(tag => {
       this.checkboxStates[tag] = true; // Set to true by default
     });
+  }
+
+  openModal() {
+    document.getElementById('modal')!.style.display = 'block';
   }
 
   toggleDropdown() {

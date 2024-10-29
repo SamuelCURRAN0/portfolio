@@ -39,13 +39,13 @@
     position: absolute;
     border-radius: 50%;
     background:#fff;
-    left: -7px;
+    left: -5px;
 }
 .container ul li > span::before {
     top: -5px;
 }
 .container ul li > span::after {
-    top:calc(100% - 10px);
+    top:calc(100% - 5px);
 }
 
 /* Texte Année de debut et de fin */

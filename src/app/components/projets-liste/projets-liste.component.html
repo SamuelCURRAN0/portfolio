@@ -1,5 +1,5 @@
 <div>
-  <h2>Projets</h2>
+  <h2>{{translationContentService.getContent("projets-titre")}}</h2>
   <div class="dropdown">
     <button
       class="btn btn-secondary dropdown-toggle"
@@ -23,7 +23,14 @@
     </div>
   </div>
   <div class="project-list">
-    <app-projet *ngFor="let project of filteredProjects()" [project]="project"></app-projet>
+    <app-projet
+      *ngFor="let project of filteredProjects()"
+      [project]="project"
+      (click)="selectProject(project)"
+      data-bs-toggle="modal"
+      data-bs-target="#modal"
+    ></app-projet>
     <h3 *ngIf="filteredProjects().length === 0">Aucun projet ne correspond à votre recherche</h3>
-  </div>
+  </div>  
 </div>
+<app-projet-detail [project]="selectedProject"></app-projet-detail>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { TranslationContentService } from '../../services/translation-content.service';
 @Component({
   selector: 'app-competences-liste',
   standalone: true,
@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './competences-liste.component.scss'
 })
 export class CompetencesListeComponent {
+  constructor(public translationContentService: TranslationContentService) { }
 
 }

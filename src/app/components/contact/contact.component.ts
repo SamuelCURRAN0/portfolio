@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { TranslationContentService } from '../../services/translation-content.service';
 @Component({
   selector: 'app-contact',
   standalone: true,
@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
+  constructor(public translationContentService: TranslationContentService) { }
 
 }
