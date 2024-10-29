@@ -1,9 +1,61 @@
 {
     "a-propos-titre": "À propos",
-    "a-propos-ecole": "Étudiant en BUT Informatique à Anglet (Iut de bayonne et du pays basque)",
+    "a-propos-ecole": "Étudiant en BUT Informatique à Anglet (IUT de Bayonne et du Pays Basque)",
     "a-propos-description": "Passionné par l'Informatique, je suis en train de perfectionner mes compétences en programmation et en informatique. Toujours curieux et en quête d'apprentissage, je m'intéresse particulièrement aux nouvelles technologies et à l'innovation. Motivé, je cherche à intégrer mes connaissances dans des projets concrets afin de contribuer activement au monde numérique de demain.",
     "projets-titre": "Projets",
+    "projets": [
+        {
+            "nom": "AlgoForge",
+            "description": "AlgoForge est un outil innovant qui remplace TabulaRasa, une plateforme d'édition algorithmique, en intégrant une fonctionnalité de détection d'anomalies. L'application permet aux utilisateurs d'identifier et de corriger les erreurs dans leurs algorithmes de manière efficace. Développé pendant mon cursus scolaire, ce projet a été un excellent moyen d'approfondir mes compétences en programmation.",
+            "image": "AlgoForge.png",
+            "tags": ["JavaScript", "GestionDeProjet"]
+        },
+        {
+            "nom": "Application de comptage de colis",
+            "description": "Cette application web prédit le coût de facturation en fonction du nombre de colis envoyés pour chaque client. Développée lors de mon stage de 2e année, elle utilise Angular et mySQL pour la gestion des données. Les utilisateurs peuvent créer des comptes et obtenir des estimations de coûts, facilitant ainsi la logistique.",
+            "image": "e-scm.png",
+            "tags": ["Angular", "Java", "mySQL", "GestionDeProjet"]
+        },
+        {
+            "nom": "Catalogue de CD",
+            "description": "Ce mini projet scolaire propose une application permettant d'ajouter et de supprimer des CD en tant qu'administrateur, ainsi que de simuler un paiement en tant que client. Ce projet m'a permis de me familiariser avec PHP et mySQL.",
+            "image": "cd.avif",
+            "tags": ["JavaScript","PHP", "mySQL"]
+        },
+        {
+            "nom": "Sauce piquante",
+            "description": "Mini projet scolaire permettant de créer un compte, d'ajouter des sauces, et de liker ou disliker des sauces. Développé sous Laravel, ce projet illustre mes compétences en développement backend et en gestion de bases de données.",
+            "image": "hot-deal.png",
+            "tags": ["Laravel", "mySQL"]
+        },
+        {
+            "nom": "Serveur de Chat",
+            "description": "Prototype d'un serveur de chat où les utilisateurs peuvent envoyer des messages, créer et supprimer des canaux de discussion. Ce projet m'a permis de mettre en pratique mes compétences en programmation C.",
+            "image": "messagerie.png",
+            "tags": ["C"]
+        },
+        {
+            "nom": "Memory",
+            "description": "Jeu éducatif développé sur terminal où les joueurs doivent retrouver des paires de cartes identiques. Ce projet m'a permis de développer mes compétences en C++ et d'appliquer des concepts de programmation orientée objet.",
+            "image": "memory.webp",
+            "tags": ["CPlus"]
+        }
+    ],
     "competences-titre": "Compétences",
     "diplomes-titre": "Diplômes",
+    "diplomes": [
+        {
+            "nom": "BUT - IUT de Bayonne et du Pays Basque",
+            "description": "Connaissances et compétences techniques spécialisées en informatique : réseaux, bases de données (dont base du SQL), programmation par la maîtrise des langages et des outils de développement du domaine (C++ et C#, Python, etc.)",
+            "anneeDeDebut": 2022,
+            "anneeDeFin": 2025
+        },
+        {
+            "nom": "Bac STI2D - Lycée Hasparen",
+            "description": "Ce cursus m’a apporté des compétences technologiques.",
+            "anneeDeDebut": 2019,
+            "anneeDeFin": 2021
+        }
+    ],
     "contact-titre": "Contact"
 }

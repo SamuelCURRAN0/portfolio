@@ -24,4 +24,14 @@ export class TranslationContentService {
     const content = this.contentSubject.getValue();
     return content ? content[param] : undefined; // Return undefined if content is not yet loaded
   }
+
+  getDiplomes(): any[] | undefined {
+    const content = this.contentSubject.getValue();
+    return content ? content.diplomes : undefined; // Return the diplomas array
+  }
+
+  getProjets(): any[] | undefined {
+    const content = this.contentSubject.getValue();
+    return content ? content.projets : undefined; // Return the diplomas array
+  }
 }

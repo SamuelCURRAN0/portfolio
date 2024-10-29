@@ -15,34 +15,34 @@ import { TranslationContentService } from '../../services/translation-content.se
 })
 export class ProjetsListeComponent {
   dropdownVisible = false;
-  projects: Project[] = [
-    new Project('AlgoForge', 'Description for project 1', 'AlgoForge.png', [ProjectTag.JavaScript, ProjectTag.GestionDeProjet]),
-    new Project('Application de comptage de colis', 'Description for project 2', 'e-scm.png', [ProjectTag.Angular, ProjectTag.Java, ProjectTag.mySQL, ProjectTag.GestionDeProjet]),
-    new Project('Catalogue de CD', 'Description for project 3', 'cd.avif', [ProjectTag.PHP, ProjectTag.mySQL]),
-    new Project('Sauce piquante', 'Description for project 3', 'hot-deal.png', [ProjectTag.Laravel, ProjectTag.mySQL]),
-    new Project('Serveur de Chat', 'Description for project 3', 'messagerie.png', [ProjectTag.C]),
-    new Project('Memory', 'Description for project 3', 'memory.webp', [ProjectTag.CPlus])
-  ];
+  projects: Project[] = [];
 
   projectsTags: string[] = [];
   checkboxStates: { [key: string]: boolean } = {};
   selectedProject: Project | null = null; // Store the selected project here
 
   constructor(public translationContentService: TranslationContentService) { }
-  selectProject(project: Project) {
-    this.selectedProject = project;
-  }
   ngOnInit() {
+    this.projects = this.translationContentService.getProjets() || [];
+
     for (const project of this.projects) {
-      for (const tag of project.tags) {
-        if (!this.projectsTags.includes(tag)) {
-          this.projectsTags.push(tag);
-        }
+        project.tags.sort();
+        project.tags = project.tags.map(tag => ProjectTag[tag as keyof typeof ProjectTag]);
+        for (const tag of project.tags) {
+          if (!this.projectsTags.includes(tag)) {
+              this.projectsTags.push(tag);
+          }
       }
     }
+    this.projectsTags.sort();
     this.projectsTags.forEach(tag => {
-      this.checkboxStates[tag] = true; // Set to true by default
+        this.checkboxStates[tag] = true;
     });
+}
+
+
+  selectProject(project: Project) {
+    this.selectedProject = project;
   }
 
   openModal() {
@@ -65,7 +65,6 @@ export class ProjetsListeComponent {
     this.checkboxStates[tag] = !this.checkboxStates[tag];
   }
 
-  // Method to get filtered projects based on selected tags
   filteredProjects(): Project[] {
     return this.projects.filter(project => 
       project.tags.some(tag => this.checkboxStates[tag])

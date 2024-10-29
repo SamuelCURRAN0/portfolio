@@ -8,8 +8,17 @@ body {
     -moz-user-select: none; /* For Firefox */
     -ms-user-select: none; /* For Internet Explorer/Edge */
 }
-
+.selectable {
+    user-select: text;
+    -webkit-user-select: text; 
+    -moz-user-select: text;
+    -ms-user-select: text; 
+  }
 h2 {
+    user-select: text;
+    -webkit-user-select: text; 
+    -moz-user-select: text;
+    -ms-user-select: text; 
     margin-top: 4em;
     font-size: 24px;
     margin-bottom: 20px;
@@ -30,6 +39,10 @@ img {
 }
 
 p {
+    user-select: text;
+    -webkit-user-select: text; 
+    -moz-user-select: text;
+    -ms-user-select: text; 
     font-size: 18px; 
     margin: 10px 0;
 }
