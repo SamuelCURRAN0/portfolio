@@ -46,3 +46,21 @@
     color: #fff;
     margin: 0;
 }
+
+#lang {
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    color: white;
+    top: 1%;
+    left: 99%;
+    transform: translate(-100%, 0);
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Center the items vertically */
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+#lang i {
+    margin-left: 5px; /* Add some space between the text and icon */
+    font-size: 16px; /* Ensure the icon size matches the text size */
+}

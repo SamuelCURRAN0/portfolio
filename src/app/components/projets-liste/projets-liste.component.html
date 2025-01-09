@@ -1,4 +1,5 @@
 <div>
+<<<<<<< HEAD
     <h2>Projets</h2>
     <div>
         <button id="filtrer-project">
@@ -7,5 +8,40 @@
     </div>
     <div class="project-list">
         <app-projet *ngFor="let project of projects" [project]="project"></app-projet>
+=======
+  <h2>{{translationContentService.getContent("projets-titre")}}</h2>
+  <div class="dropdown">
+    <button
+      class="btn btn-secondary dropdown-toggle"
+      type="button"
+      id="dropdownMenuButton"
+      (click)="toggleDropdown()"
+    >
+      Filtrer
+    </button>
+    <div *ngIf="dropdownVisible" class="dropdown-list">
+      <ng-container *ngFor="let tag of projectsTags">
+        <div class="dropdown-item" (click)="toggleCheckbox(tag)">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            [checked]="checkboxStates[tag]"
+          />
+          {{ tag }}
+        </div>
+      </ng-container>
+>>>>>>> b8975907805eec0680c2d08d981225ea0a484048
     </div>
+  </div>
+  <div class="project-list">
+    <app-projet
+      *ngFor="let project of filteredProjects()"
+      [project]="project"
+      (click)="selectProject(project)"
+      data-bs-toggle="modal"
+      data-bs-target="#modal"
+    ></app-projet>
+    <h3 *ngIf="filteredProjects().length === 0">Aucun projet ne correspond à votre recherche</h3>
+  </div>  
 </div>
+<app-projet-detail [project]="selectedProject"></app-projet-detail>
