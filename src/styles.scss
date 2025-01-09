@@ -1,12 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 /* General Styles */
-body {
-    font-family: 'Inter', sans-serif; 
+* {
+    font-family: 'Poppins', sans-serif; 
     margin: 0;
     user-select: none; /* Prevents text selection */
     -webkit-user-select: none; /* For Safari */
     -moz-user-select: none; /* For Firefox */
     -ms-user-select: none; /* For Internet Explorer/Edge */
+}
+.selectable {
+    user-select: text; /* Allow text selection */
+    -webkit-user-select: text; /* For Safari */
+    -moz-user-select: text; /* For Firefox */
+    -ms-user-select: text; /* For Internet Explorer/Edge */
 }
 
 h2 {

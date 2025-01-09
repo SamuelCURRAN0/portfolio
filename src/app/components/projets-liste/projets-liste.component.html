@@ -1,5 +1,10 @@
 <div>
     <h2>Projets</h2>
+    <div>
+        <button id="filtrer-project">
+            <span class="text">Filtrer</span><i class="bx bx-chevron-down"></i>
+        </button>
+    </div>
     <div class="project-list">
         <app-projet *ngFor="let project of projects" [project]="project"></app-projet>
     </div>

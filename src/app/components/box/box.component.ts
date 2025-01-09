@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer2, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, Renderer2, AfterViewInit, HostListener } from '@angular/core';
 import { RandomNumberService } from '../../services/random-number.service';
 
 @Component({
@@ -44,4 +44,26 @@ export class BoxComponent implements AfterViewInit {
     this.renderer.setStyle(this.elementRef.nativeElement, 'top', `${this.top}%`);
     this.renderer.setStyle(this.elementRef.nativeElement, 'left', `${this.left}%`);
   }
+
+  @HostListener('mousemove', ['$event'])
+  onMouseMove(event: MouseEvent) {
+    const mouseX = event.clientX; // Position X de la souris
+    const mouseY = event.clientY; // Position Y de la souris
+
+    // Récupérer la position actuelle du composant
+    const rect = this.elementRef.nativeElement.getBoundingClientRect();
+    const componentCenterX = rect.left + rect.width / 2; // Centre du composant
+    const componentCenterY = rect.top + rect.height / 2; // Centre du composant
+    const distanceX = mouseX - componentCenterX;
+    const distanceY = mouseY - componentCenterY;
+    console.log(distanceX);
+    // Définir les nouvelles positions avec des limites
+    const newLeft = Math.max(0, Math.min(window.innerWidth - rect.width, (rect.width / 2-distanceX) + rect.left));
+    const newTop = Math.max(0, Math.min(window.innerHeight - rect.height, (rect.height/2-distanceY) + rect.top));
+
+    // Appliquer les nouvelles positions
+    this.elementRef.nativeElement.style.left = newLeft + 'px';
+    this.elementRef.nativeElement.style.top = newTop + 'px';
+  }
+
 }
