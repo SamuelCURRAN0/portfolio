@@ -9,20 +9,11 @@
     -ms-user-select: none; /* For Internet Explorer/Edge */
 }
 .selectable {
-<<<<<<< HEAD
-    user-select: text; /* Allow text selection */
-    -webkit-user-select: text; /* For Safari */
-    -moz-user-select: text; /* For Firefox */
-    -ms-user-select: text; /* For Internet Explorer/Edge */
-}
-
-=======
     user-select: text;
     -webkit-user-select: text; 
     -moz-user-select: text;
     -ms-user-select: text; 
-  }
->>>>>>> b8975907805eec0680c2d08d981225ea0a484048
+}
 h2 {
     user-select: text;
     -webkit-user-select: text; 
@@ -39,6 +30,9 @@ h2::before {
 h2::after {
     content: " ~";
 }
+body::-webkit-scrollbar {
+    display: none;
+  }
 
 img {
     display: block;

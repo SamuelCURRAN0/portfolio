@@ -1,0 +1,17 @@
+.container {
+    display: flex;              /* Utilisation de flexbox pour aligner les divs horizontalement */
+    width: 100%;                /* Conteneur prend 100% de la largeur */
+    justify-content: space-between; /* Éspace entre les éléments */
+    gap: 20px;                  /* Espacement de 20px entre les divs */
+  }
+  
+  .left, .right {
+    background-color: #f4f4f4;  /* Arrière-plan pour chaque div */
+    padding: 20px;
+    width: calc(50% - 10px);     /* Chaque div prend la moitié de l'espace, moins la moitié du gap */
+  }
+  
+  .right {
+    background-color: #e0e0e0;  /* Différente couleur pour la div droite */
+  }
+  
