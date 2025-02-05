@@ -8,7 +8,8 @@
             "nom": "AlgoForge",
             "description": "AlgoForge est un outil innovant qui remplace TabulaRasa, une plateforme d'édition algorithmique, en intégrant une fonctionnalité de détection d'anomalies. L'application permet aux utilisateurs d'identifier et de corriger les erreurs dans leurs algorithmes de manière efficace. Développé pendant mon cursus scolaire, ce projet a été un excellent moyen d'approfondir mes compétences en programmation.",
             "image": "AlgoForge.png",
-            "tags": ["JavaScript", "GestionDeProjet"]
+            "tags": ["JavaScript", "GestionDeProjet"],
+            "lienGithub": "https://github.com/Bing-Chill-inc/Algoforge"
         },
         {
             "nom": "Application de comptage de colis",
@@ -20,13 +21,15 @@
             "nom": "Catalogue de CD",
             "description": "Ce mini projet scolaire propose une application permettant d'ajouter et de supprimer des CD en tant qu'administrateur, ainsi que de simuler un paiement en tant que client. Ce projet m'a permis de me familiariser avec PHP et mySQL.",
             "image": "cd.avif",
-            "tags": ["JavaScript","PHP", "mySQL"]
+            "tags": ["JavaScript","PHP", "mySQL"],
+            "lienGithub": "https://github.com/Fetnmax/catalogueCDAngular"
         },
         {
             "nom": "Sauce piquante",
             "description": "Mini projet scolaire permettant de créer un compte, d'ajouter des sauces, et de liker ou disliker des sauces. Développé sous Laravel, ce projet illustre mes compétences en développement backend et en gestion de bases de données.",
             "image": "hot-deal.png",
-            "tags": ["Laravel", "mySQL"]
+            "tags": ["Laravel", "mySQL"],
+            "lienGithub": "https://github.com/Fetnmax/ProjetLaravel"
         },
         {
             "nom": "Serveur de Chat",
@@ -42,6 +45,20 @@
         }
     ],
     "competences-titre": "Compétences",
+    "competences": [
+        {
+            "nom": "PHP",
+            "categorie": "BackEnd"
+        },
+        {
+            "nom": "C",
+            "categorie": "BackEnd"
+        },
+        {
+            "nom": "JavaScript",
+            "categorie": "FrontEnd"
+        }
+    ],
     "diplomes-titre": "Diplômes",
     "diplomes": [
         {

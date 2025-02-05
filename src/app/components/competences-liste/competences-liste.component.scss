@@ -15,3 +15,19 @@
     background-color: #e0e0e0;  /* Différente couleur pour la div droite */
   }
   
+  .title {
+    font-size: 1.5em;           /* Taille de police */
+    margin-bottom: 10px;        /* Espacement en bas */
+  }
+  
+  .CV {
+    width: 100%;  
+    position: relative;
+    transition: filter 0.3s ease;    
+  }
+  
+  .CV:hover {
+    filter: grayscale(100%);
+  }
+  
+  

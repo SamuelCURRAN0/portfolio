@@ -3,21 +3,16 @@
     <div class="container">
         <div class="left">
           <p>Contenu de la div gauche</p>
-          <div>
-              BackEnd
-          </div>
-          <div>
-              Php
-          </div>
-          <div>
-              ...
-          </div>
+          <ng-container *ngFor="let categorie of mapCategorie">
+              <div class="title">{{categorie}}</div>
+              <ng-container *ngFor="let competence of getCompetencesByCategorie(categorie)">
+                    <div class="subtitle">{{competence.nom}}</div>
+              </ng-container>
+          </ng-container>
         </div>
         <div class="right">
           <p>Contenu de la div droite</p>
-        <div>
-            CV
-        </div>
+          <img class="CV" [src]="'assets/images/CV-CURRAN-Samuel.png'" alt="CV" />
         </div>
       </div>
     <div>
