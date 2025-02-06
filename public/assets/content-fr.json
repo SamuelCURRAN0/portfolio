@@ -44,21 +44,74 @@
             "tags": ["CPlus"]
         }
     ],
-    "competences-titre": "Compétences",
+    "competences-titre": "Compétences",   
     "competences": [
         {
             "nom": "PHP",
+            "niveau": "intermédiaire",
             "categorie": "BackEnd"
-        },
-        {
+          },
+          {
+            "nom": "Laravel",
+            "niveau": "intermédiaire",
+            "categorie": "Framework"
+          },
+          {
             "nom": "C",
+            "niveau": "intermédiaire",
+            "categorie": "Système / Performance"
+          },
+          {
+            "nom": "C++",
+            "niveau": "intermédiaire",
+            "categorie": "Système / Performance"
+          },
+          {
+            "nom": "C#",
+            "niveau": "intermédiaire",
+            "categorie": "Développement de jeux"
+          },
+          {
+            "nom": "Java",
+            "niveau": "intermédiaire",
             "categorie": "BackEnd"
-        },
-        {
+          },
+          {
             "nom": "JavaScript",
+            "niveau": "intermédiaire",
             "categorie": "FrontEnd"
-        }
-    ],
+          },
+          {
+            "nom": "Angular",
+            "niveau": "intermédiaire",
+            "categorie": "Framework"
+          },
+          {
+            "nom": "SQL",
+            "niveau": "intermédiaire",
+            "categorie": "Base de données"
+          },
+          {
+            "nom": "MongoDB",
+            "niveau": "intermédiaire",
+            "categorie": "Base de données"
+          },
+          {
+            "nom": "Node.js",
+            "niveau": "intermédiaire",
+            "categorie": "BackEnd"
+          },
+          {
+            "nom": "Git",
+            "niveau": "intermédiaire",
+            "categorie": "Gestion de version"
+          },
+          {
+            "nom": "Gestion de projet",
+            "niveau": "intermédiaire",
+            "categorie": "Management"
+          }
+      ],
     "diplomes-titre": "Diplômes",
     "diplomes": [
         {
