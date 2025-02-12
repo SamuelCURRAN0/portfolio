@@ -11,16 +11,10 @@ import { Competence } from '../../models/competence.model';
 })
 export class CompetencesListeComponent {
   competences: Competence[] = [];
-  mapCategorie: string[] = [];
   constructor(public translationContentService: TranslationContentService) { }
   
   ngOnInit(): void {
     this.competences = this.translationContentService.getCompetences() || [];
     console.log(this.competences);
-    //this.mapCategorie = Array.from(new Set(this.competences.map(competence => competence.categorie)));
   }
-
-  /*getCompetencesByCategorie(categorie: string): Competence[] {
-    return this.competences.filter(competence => competence.categorie === categorie);
-  }*/
 }

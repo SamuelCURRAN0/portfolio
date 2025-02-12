@@ -1,15 +1,16 @@
 <div>
     <h2>{{translationContentService.getContent("competences-titre")}}</h2>
-    <div *ngFor="let categorie of mapCategorie" class="categorie">
-      <div class="title">{{categorie}}</div>
-      <ng-container *ngFor="let competence of getCompetencesByCategorie(categorie)">
-            <div class="subtitle">{{competence.nom}}</div>
+    <div *ngFor="let competence of competences" class="categorie">
+      <div class="title">{{competence.nom}}</div>
+      <ng-container *ngFor="let skill of competence.lstSkills">
+            <div class="subtitle">{{skill}}</div>
       </ng-container>
-  </div>
-    <div class="container">
+    </div>
+    <!--
+    <<div class="container">
         <div class="left">
-          <ng-container *ngFor="let categorie of mapCategorie">
-              <div class="title">{{categorie}}</div>
+          <ng-container *ngFor="let competence of competences">
+              <div class="title">{{competences}}</div>
               <ng-container *ngFor="let competence of getCompetencesByCategorie(categorie)">
                     <div class="subtitle">{{competence.nom}}</div>
               </ng-container>
@@ -20,4 +21,5 @@
         </div>
       </div>
     <div>
+    -->
 </div>
