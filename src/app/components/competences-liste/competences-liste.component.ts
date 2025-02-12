@@ -17,10 +17,6 @@ export class CompetencesListeComponent {
   ngOnInit(): void {
     this.competences = this.translationContentService.getCompetences() || [];
     this.mapCategorie = Array.from(new Set(this.competences.map(competence => competence.categorie)));
-    for(let i = 0; i < this.mapCategorie.length; i++) {
-      console.log(this.mapCategorie[i]);
-    }
-    console.log(this.competences);
   }
 
   getCompetencesByCategorie(categorie: string): Competence[] {

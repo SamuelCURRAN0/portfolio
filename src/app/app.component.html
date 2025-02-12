@@ -5,7 +5,7 @@
   <app-a-propos data-aos="fade-right"></app-a-propos>
 </section>
 <section class="space">
-  <app-projets-liste data-aos="fade-right"></app-projets-liste>
+  <app-projets-liste data-aos="fade-right" (projectSelected)="onProjectSelected($event)"></app-projets-liste>
 </section>
 <section class="space">
   <app-competences-liste data-aos="fade-right"></app-competences-liste>
@@ -16,4 +16,5 @@
 <section class="end space">
   <app-contact data-aos="fade-right"></app-contact>
 </section>
+<app-projet-detail [project]="selectedProject"></app-projet-detail>
 <!--app-custom-scrollbar></app-custom-scrollbar-->

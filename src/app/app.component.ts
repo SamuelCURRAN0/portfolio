@@ -10,6 +10,8 @@ import { DiplomesListeComponent } from './components/diplomes-liste/diplomes-lis
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { ProjetComponent } from './components/projet/projet.component';
 import { ProjetsListeComponent } from './components/projets-liste/projets-liste.component';
+import { ProjetDetailComponent } from './components/projet-detail/projet-detail.component';
+import { Project } from './models/project.model'; 
 import * as AOS from 'aos';
 
 @Component({
@@ -26,11 +28,13 @@ import * as AOS from 'aos';
     MainMenuComponent,
     ProjetComponent,
     ProjetsListeComponent,
+    ProjetDetailComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit, AfterViewInit {
+  selectedProject: Project | null = null;
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
   title = 'portfolio';
   ngOnInit() {
@@ -40,5 +44,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
   ngAfterViewInit() {
     AOS.refresh();
+  }
+  onProjectSelected(project: Project) {
+    this.selectedProject = project;
   }
 }

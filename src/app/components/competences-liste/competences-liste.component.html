@@ -2,7 +2,6 @@
     <h2>{{translationContentService.getContent("competences-titre")}}</h2>
     <div class="container">
         <div class="left">
-          <p>Contenu de la div gauche</p>
           <ng-container *ngFor="let categorie of mapCategorie">
               <div class="title">{{categorie}}</div>
               <ng-container *ngFor="let competence of getCompetencesByCategorie(categorie)">
@@ -11,7 +10,6 @@
           </ng-container>
         </div>
         <div class="right">
-          <p>Contenu de la div droite</p>
           <img class="CV" [src]="'assets/images/CV-CURRAN-Samuel.png'" alt="CV" />
         </div>
       </div>
