@@ -54,7 +54,7 @@
         ],
         "image": "cd.avif",
         "tags": ["JavaScript", "PHP", "mySQL"],
-        "lienGithub": "https://github.com/Fetnmax/catalogueCDAngular"
+        "lienGithub": "https://github.com/SamuelCURRAN0/CatalogueCDPhp"
       },
       {
         "nom": "Sauce piquante",
@@ -68,7 +68,7 @@
         ],
         "image": "hot-deal.png",
         "tags": ["Laravel", "mySQL"],
-        "lienGithub": "https://github.com/Fetnmax/ProjetLaravel"
+        "lienGithub": "https://github.com/SamuelCURRAN0/SaucePiquante"
       },
       {
         "nom": "Serveur de Chat",
@@ -100,72 +100,37 @@
     ,
     "competences-titre": "Compétences",   
     "competences": [
-        {
-            "nom": "PHP",
-            "niveau": "intermédiaire",
-            "categorie": "BackEnd"
-          },
-          {
-            "nom": "Laravel",
-            "niveau": "intermédiaire",
-            "categorie": "Framework"
-          },
-          {
-            "nom": "C",
-            "niveau": "intermédiaire",
-            "categorie": "Système / Performance"
-          },
-          {
-            "nom": "C++",
-            "niveau": "intermédiaire",
-            "categorie": "Système / Performance"
-          },
-          {
-            "nom": "C#",
-            "niveau": "intermédiaire",
-            "categorie": "Développement de jeux"
-          },
-          {
-            "nom": "Java",
-            "niveau": "intermédiaire",
-            "categorie": "BackEnd"
-          },
-          {
-            "nom": "JavaScript",
-            "niveau": "intermédiaire",
-            "categorie": "FrontEnd"
-          },
-          {
-            "nom": "Angular",
-            "niveau": "intermédiaire",
-            "categorie": "Framework"
-          },
-          {
-            "nom": "SQL",
-            "niveau": "intermédiaire",
-            "categorie": "Base de données"
-          },
-          {
-            "nom": "MongoDB",
-            "niveau": "intermédiaire",
-            "categorie": "Base de données"
-          },
-          {
-            "nom": "Node.js",
-            "niveau": "intermédiaire",
-            "categorie": "BackEnd"
-          },
-          {
-            "nom": "Git",
-            "niveau": "intermédiaire",
-            "categorie": "Gestion de version"
-          },
-          {
-            "nom": "Gestion de projet",
-            "niveau": "intermédiaire",
-            "categorie": "Management"
-          }
-      ],
+      {
+        "nom": "BackEnd",
+        "lstSkills": ["PHP", "Laravel", "Java", "Node.js"],
+        "color": "#60A5FA"
+      },
+      {
+        "nom": "Système / Performance",
+        "lstSkills": ["C", "C++"],
+        "color": "#10B981"
+      },
+      {
+        "nom": "Développement de jeux",
+        "lstSkills": ["Unity"],
+        "color": "#FBBF24"
+      },
+      {
+        "nom": "FrontEnd",
+        "lstSkills": ["JavaScript", "HTML", "CSS", "Bootstrap", "TypeScript", "Angular"],
+        "color": "#EF4444"
+      },
+      {
+        "nom": "Base de données",
+        "lstSkills": ["MySQL", "MongoDB", "SQLite","PostgreSQL"],
+        "color": "#8B5CF6"
+      },
+      {
+        "nom": "DevOps et Gestion de Projet",
+        "lstSkills": ["Gestion de projet", "Git","Trello"],
+        "color": "#EC4899"
+      }
+    ],
     "diplomes-titre": "Diplômes",
     "diplomes": [
         {

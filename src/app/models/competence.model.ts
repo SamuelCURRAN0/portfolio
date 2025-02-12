@@ -1,6 +1,7 @@
 export class Competence {
     constructor(
         public nom: string,
-        public categorie: string,
+        public lstSkills: string[],
+        public color: string
     ) {}
 }

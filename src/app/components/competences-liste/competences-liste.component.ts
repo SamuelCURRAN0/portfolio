@@ -16,10 +16,11 @@ export class CompetencesListeComponent {
   
   ngOnInit(): void {
     this.competences = this.translationContentService.getCompetences() || [];
-    this.mapCategorie = Array.from(new Set(this.competences.map(competence => competence.categorie)));
+    console.log(this.competences);
+    //this.mapCategorie = Array.from(new Set(this.competences.map(competence => competence.categorie)));
   }
 
-  getCompetencesByCategorie(categorie: string): Competence[] {
+  /*getCompetencesByCategorie(categorie: string): Competence[] {
     return this.competences.filter(competence => competence.categorie === categorie);
-  }
+  }*/
 }
