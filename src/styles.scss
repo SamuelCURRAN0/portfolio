@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 /* General Styles */
+@import "styles/variables";
+
 * {
     font-family: 'Poppins', sans-serif; 
     margin: 0;
@@ -23,7 +25,10 @@ h2 {
     font-size: 24px;
     margin-bottom: 20px;
 }
-
+body {
+    background-color: var(--primary-bg) !important;
+    color: var(--text-color) !important;
+}
 h2::before {
     content: "~ ";
 }
@@ -80,9 +85,4 @@ section {
 }
 section.end {
     padding-bottom: 0;
-}
-
-.color-black{
-    background-color: #000000; /* Soft red */
-    color: #fff; /* White text for contrast */
 }

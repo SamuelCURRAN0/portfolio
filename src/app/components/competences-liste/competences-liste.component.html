@@ -1,25 +1,20 @@
 <div>
-    <h2>{{translationContentService.getContent("competences-titre")}}</h2>
-    <div *ngFor="let competence of competences" class="categorie">
-      <div class="title">{{competence.nom}}</div>
-      <ng-container *ngFor="let skill of competence.lstSkills">
-            <div class="subtitle">{{skill}}</div>
-      </ng-container>
-    </div>
-    <!--
-    <<div class="container">
-        <div class="left">
-          <ng-container *ngFor="let competence of competences">
-              <div class="title">{{competences}}</div>
-              <ng-container *ngFor="let competence of getCompetencesByCategorie(categorie)">
-                    <div class="subtitle">{{competence.nom}}</div>
+  <h2>{{translationContentService.getContent("competences-titre")}}</h2> 
+
+  <!-- Grid container for competences -->
+  <div class="competences-container">
+      <div *ngFor="let competence of competences" 
+           class="categorie" 
+           [style.backgroundColor]="competence.color">
+           
+          <div class="title">{{competence.nom}}</div> 
+
+          <!-- Flexbox container for skills -->
+          <div class="skills-container">
+              <ng-container *ngFor="let skill of competence.lstSkills">
+                  <div class="skill">{{skill}}</div>
               </ng-container>
-            </ng-container>
-        </div>
-        <div class="right">
-          <img class="CV" [src]="'assets/images/CV-CURRAN-Samuel.png'" alt="CV" />
-        </div>
+          </div>
       </div>
-    <div>
-    -->
+  </div>
 </div>

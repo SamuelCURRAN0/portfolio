@@ -101,6 +101,11 @@
     "competences-titre": "Compétences",   
     "competences": [
       {
+        "nom": "FrontEnd",
+        "lstSkills": ["JavaScript", "HTML", "CSS", "Bootstrap", "TypeScript", "Angular"],
+        "color": "#EF4444"
+      },
+      {
         "nom": "BackEnd",
         "lstSkills": ["PHP", "Laravel", "Java", "Node.js"],
         "color": "#60A5FA"
@@ -114,11 +119,6 @@
         "nom": "Développement de jeux",
         "lstSkills": ["Unity"],
         "color": "#FBBF24"
-      },
-      {
-        "nom": "FrontEnd",
-        "lstSkills": ["JavaScript", "HTML", "CSS", "Bootstrap", "TypeScript", "Angular"],
-        "color": "#EF4444"
       },
       {
         "nom": "Base de données",

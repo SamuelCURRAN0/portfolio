@@ -1,12 +1,11 @@
 .project {
-    color: #333;
-    border: 0.2vw solid rgb(238, 238, 238);
+    border: 0.2vw solid var(--secondary-bg);
     border-radius: 1em;
     width:20em;
     height:25em;
     flex: 1 1 200em;
     box-shadow: 0 1em 1em rgba(0, 0, 0, 0.1);
-    background-color: white;
+    background-color: var(--secondary-bg);
     padding-left: 2em;
     padding-right: 2em;
     cursor: pointer;
@@ -25,8 +24,6 @@
 }
 
 .tag {
-    background-color: #e0e0e0;
-    color: #333; 
     padding: 8px 12px;
     border-radius: 20px; 
     font-size: 14px; 
@@ -34,8 +31,4 @@
     white-space: nowrap; 
     transition: background-color 0.3s, transform 0.3s, font-size 0.3s; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
-}
-
-.tag.dynamic {
-    color: #fff; 
 }

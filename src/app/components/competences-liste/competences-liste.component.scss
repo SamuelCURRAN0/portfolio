@@ -1,40 +1,46 @@
-.container {
-    display: flex;              /* Utilisation de flexbox pour aligner les divs horizontalement */
-    width: 100%;                /* Conteneur prend 100% de la largeur */
-    justify-content: space-between; /* Éspace entre les éléments */
-    gap: 20px;                  /* Espacement de 20px entre les divs */
-  }
-  
-  .left, .right {
-    background-color: #f4f4f4;  /* Arrière-plan pour chaque div */
-    padding: 20px;
-    width: calc(50% - 10px);     /* Chaque div prend la moitié de l'espace, moins la moitié du gap */
-  }
-  
-  .right {
-    background-color: #e0e0e0;  /* Différente couleur pour la div droite */
-  }
-  
-  .title {
-    font-size: 1.5em;           /* Taille de police */
-    margin-bottom: 10px;        /* Espacement en bas */
-  }
-  
-  .CV {
-    width: 100%;  
-    position: relative;
-    transition: filter 0.3s ease;    
-  }
-  
-  .CV:hover {
-    filter: grayscale(100%);
-  }
-  
-  .categorie {
-    border: solid 2px black;
-    border-radius: 10px;
-    background-color: aqua;
-    width: 20vw;
-    height: 200px;
-  }
-  
+.competences-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  gap: 20px; 
+  justify-content: center;
+  height: 500px;
+}
+
+
+.categorie {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  padding: 15px 15px 0 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; 
+  justify-content: center; 
+}
+
+.skill {
+
+  border-radius: 3px;
+  background-color: white;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  color: rgb(0, 12, 99);
+  display: inline-block;
+}
+
+.categorie:hover .title {
+  text-decoration: underline;
+}
