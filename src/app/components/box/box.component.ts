@@ -26,7 +26,9 @@ export class BoxComponent implements AfterViewInit {
   }
 
   onAnimationEnd(): void {
-    console.log("Anim end");
+    //console.log("Anim end");
+    this.generateValue();
+    this.setValue();
 
   }
 
@@ -56,7 +58,7 @@ export class BoxComponent implements AfterViewInit {
     const componentCenterY = rect.top + rect.height / 2; // Centre du composant
     const distanceX = mouseX - componentCenterX;
     const distanceY = mouseY - componentCenterY;
-    console.log(distanceX);
+    //console.log(distanceX);
     // Définir les nouvelles positions avec des limites
     const newLeft = Math.max(0, Math.min(window.innerWidth - rect.width, (rect.width / 2-distanceX) + rect.left));
     const newTop = Math.max(0, Math.min(window.innerHeight - rect.height, (rect.height/2-distanceY) + rect.top));

@@ -1,3 +1,61 @@
 .modal-dialog {
     width: 80%;
 }
+.libelle 
+{
+    text-align: center;
+    font-size: 14px;
+}
+
+.link-button {
+    margin: 2px;
+}
+.link-button svg {
+    margin-right: 5px;
+}
+.github-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    background-color: #24292e;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .github-button:hover {
+    background-color: #444d56;
+  }
+
+  .website-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    background-color: #007BFF; /* Couleur de fond, à modifier si besoin */
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  .website-button:hover {
+    background-color: #0056b3;
+  }
+
+.tag {
+    background-color: #e0e0e0;
+    color: #333; 
+    padding: 6px 8px;
+    border-radius: 20px; 
+    font-size: 12px; 
+    display: inline-block; 
+    white-space: nowrap; 
+    transition: background-color 0.3s, transform 0.3s, font-size 0.3s; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+    margin-right: 2px;
+}

@@ -32,7 +32,7 @@ export class MainMenuComponent implements AfterViewInit {
     });*/
   }
 
-  @HostListener('mousemove', ['$event']) onMouseMove(event: MouseEvent) {
+  /*@HostListener('mousemove', ['$event']) onMouseMove(event: MouseEvent) {
     this.mouseX = event.clientX;
     this.mouseY = event.clientY;
     this.UpdateBox();
@@ -55,5 +55,5 @@ export class MainMenuComponent implements AfterViewInit {
     if(distance < 10) {
       console.log(monElement);
     }
-  }
+  }*/
 }
