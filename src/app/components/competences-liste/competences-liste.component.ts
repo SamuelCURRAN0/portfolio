@@ -15,6 +15,5 @@ export class CompetencesListeComponent {
   
   ngOnInit(): void {
     this.competences = this.translationContentService.getCompetences() || [];
-    console.log(this.competences);
   }
 }

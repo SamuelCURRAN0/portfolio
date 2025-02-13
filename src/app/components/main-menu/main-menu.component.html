@@ -3,8 +3,12 @@
         <div class="texte">
             <div class="name">Samuel CURRAN</div>
             <div class="portfolio">Portfolio</div>
-        </div>       
-        <button id="lang">Fr<i class="fas fa-chevron-down"></i></button>
+        </div>      
+        <div class="right-menu">
+            <app-buton-theme></app-buton-theme> 
+            <button id="lang">Fr<i class="fas fa-chevron-down"></i></button>
+        </div>
+        
         <app-box *ngFor="let number of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"></app-box>
     </div>
 </div>

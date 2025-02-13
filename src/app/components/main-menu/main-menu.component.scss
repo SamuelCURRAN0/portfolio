@@ -46,17 +46,33 @@
     margin: 0;
 }
 
-#lang {
+.right-menu {
     position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: row; /* Par défaut, flex affiche en ligne */
+    align-items: center;
+    gap: 15px; /* Espace entre les éléments */
+    z-index: 10; /* Pour être sûr qu'ils soient par-dessus d'autres éléments */
+}
+
+/* Si <app-buton-theme> a des styles internes qui le rendent en block complet,
+   force-le à être inline-flex */
+app-buton-theme {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Bouton de langue */
+#lang {
     border: none;
     background-color: transparent;
     color: white;
-    top: 1%;
-    left: 99%;
-    transform: translate(-100%, 0);
-    display: flex;
-    align-items: center;
     font-size: 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
 }
 
 #lang i {

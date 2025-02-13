@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, AfterViewInit, HostListener  } from '@angular/core';
 import { BoxComponent } from '../box/box.component';
+import { ButonThemeComponent } from '../buton-theme/buton-theme.component'
 
 @Component({
   selector: 'app-main-menu',
   standalone: true,
-  imports: [CommonModule, BoxComponent],
+  imports: [CommonModule, BoxComponent, ButonThemeComponent],
   templateUrl: './main-menu.component.html',
   styleUrls: ['./main-menu.component.scss']  // Corriger `styleUrl` en `styleUrls`
 })

@@ -22,7 +22,7 @@ export class BoxComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.generateValue();
     this.setValue();
-    this.renderer.listen(this.elementRef.nativeElement, 'animationend', () => this.onAnimationEnd());
+    this.renderer.listen(this.elementRef.nativeElement, 'animationiteration', () => this.onAnimationEnd());
   }
 
   onAnimationEnd(): void {
@@ -40,16 +40,23 @@ export class BoxComponent implements AfterViewInit {
   }
 
   setValue(): void {
-    // Set animation duration directly on the element
     this.renderer.setStyle(this.elementRef.nativeElement, 'animation-duration', `${this.timeAnimation}s`);
-    // Set the position dynamically
-    this.renderer.setStyle(this.elementRef.nativeElement, 'top', `${this.top}%`);
-    this.renderer.setStyle(this.elementRef.nativeElement, 'left', `${this.left}%`);
+    this.renderer.setStyle(this.elementRef.nativeElement, 'display', 'none');
+    setTimeout(() => {
+      this.renderer.setStyle(this.elementRef.nativeElement, 'top', `${this.top}%`);
+      this.renderer.setStyle(this.elementRef.nativeElement, 'left', `${this.left}%`);
+      this.renderer.setStyle(this.elementRef.nativeElement, 'display', 'block');
+    }, 100);
+
+
   }
 
   @HostListener('mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {
-    const mouseX = event.clientX; // Position X de la souris
+    this.renderer.setStyle(this.elementRef.nativeElement, 'display', 'none');
+    this.generateValue();
+    this.setValue();
+    /*const mouseX = event.clientX; // Position X de la souris
     const mouseY = event.clientY; // Position Y de la souris
 
     // Récupérer la position actuelle du composant
@@ -58,14 +65,12 @@ export class BoxComponent implements AfterViewInit {
     const componentCenterY = rect.top + rect.height / 2; // Centre du composant
     const distanceX = mouseX - componentCenterX;
     const distanceY = mouseY - componentCenterY;
-    //console.log(distanceX);
-    // Définir les nouvelles positions avec des limites
     const newLeft = Math.max(0, Math.min(window.innerWidth - rect.width, (rect.width / 2-distanceX) + rect.left));
     const newTop = Math.max(0, Math.min(window.innerHeight - rect.height, (rect.height/2-distanceY) + rect.top));
 
     // Appliquer les nouvelles positions
     this.elementRef.nativeElement.style.left = newLeft + 'px';
-    this.elementRef.nativeElement.style.top = newTop + 'px';
+    this.elementRef.nativeElement.style.top = newTop + 'px';*/
   }
 
 }

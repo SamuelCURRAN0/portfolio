@@ -3,6 +3,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { AProposComponent } from './components/a-propos/a-propos.component';
 import { BoxComponent } from './components/box/box.component';
+import { ButonThemeComponent } from './components/buton-theme/buton-theme.component'
 import { CompetencesListeComponent } from './components/competences-liste/competences-liste.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { CustomScrollbarComponent } from './components/custom-scrollbar/custom-scrollbar.component';
@@ -21,6 +22,7 @@ import * as AOS from 'aos';
     RouterOutlet,
     AProposComponent,
     BoxComponent,
+    ButonThemeComponent,
     CompetencesListeComponent,
     ContactComponent,
     CustomScrollbarComponent,
