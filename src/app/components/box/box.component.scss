@@ -5,7 +5,7 @@
     background-color: transparent;
     border: 6px solid rgba(255, 255, 255, 0.8);
     transform-origin: center;
-    animation: animate linear;
+    animation: animate linear infinite;
 }
 
 @keyframes animate {

@@ -9,25 +9,26 @@
 .dropdown .dropdown-list {
     position: absolute;
     border: 1px solid rgb(180, 180, 180);
+    background-color: var(--primary-bg);
     margin: 1px 0;
-    padding: 10px 0; /* Maintain padding for dropdown */
+    padding: 10px 0;
     border-radius: 10px;
     width: 200px;
-    z-index: 1000; /* Ensure dropdown appears above other elements */
+    z-index: 1000;
 }
 
 .dropdown .dropdown-list .dropdown-item {
     padding: 5px 10px;
-    display: flex; /* Use flexbox for alignment */
-    align-items: center; /* Center checkbox and text vertically */
-    cursor: pointer; /* Change cursor to indicate clickable item */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
 .dropdown .dropdown-list .dropdown-item input[type="checkbox"] {
-    margin-right: 8px; /* Space between checkbox and text */
-    cursor: pointer; /* Change cursor for checkbox as well */
+    margin-right: 8px;
+    cursor: pointer;
 }
 
 .dropdown .dropdown-list .dropdown-item:hover {
-    background-color: rgb(241, 241, 241); /* Hover effect for dropdown item */
+    background-color: var(--secondary-bg);
 }

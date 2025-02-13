@@ -5,10 +5,10 @@
 * {
     font-family: 'Poppins', sans-serif; 
     margin: 0;
-    user-select: none; /* Prevents text selection */
-    -webkit-user-select: none; /* For Safari */
-    -moz-user-select: none; /* For Firefox */
-    -ms-user-select: none; /* For Internet Explorer/Edge */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none;
 }
 .selectable {
     user-select: text;
