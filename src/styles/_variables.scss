@@ -2,10 +2,12 @@
     --primary-bg: #1e1e1e;
     --secondary-bg: #2a2a2a;
     --text-color: #ffffff;
+    --blue-bg: rgba(9,9,121,1);
   }
   
   [data-theme="light"] {
-    --primary-bg: #ffffff;
-    --secondary-bg: #f5f5f5;
+    --primary-bg: #e2e2e2;
+    --secondary-bg: #c4c4c4;
     --text-color: #333;
+    --blue-bg: rgb(9, 9, 158);
   }

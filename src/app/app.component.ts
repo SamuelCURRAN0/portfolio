@@ -7,6 +7,7 @@ import { ButonThemeComponent } from './components/buton-theme/buton-theme.compon
 import { CompetencesListeComponent } from './components/competences-liste/competences-liste.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { CustomScrollbarComponent } from './components/custom-scrollbar/custom-scrollbar.component';
+import { CustomTextEffectComponent } from './components/custom-text-effect/custom-text-effect.component'
 import { DiplomesListeComponent } from './components/diplomes-liste/diplomes-liste.component';
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { ProjetComponent } from './components/projet/projet.component';
@@ -26,6 +27,7 @@ import * as AOS from 'aos';
     CompetencesListeComponent,
     ContactComponent,
     CustomScrollbarComponent,
+    CustomTextEffectComponent,
     DiplomesListeComponent,
     MainMenuComponent,
     ProjetComponent,
