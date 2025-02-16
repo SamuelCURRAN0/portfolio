@@ -9,6 +9,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { CustomScrollbarComponent } from './components/custom-scrollbar/custom-scrollbar.component';
 import { CustomTextEffectComponent } from './components/custom-text-effect/custom-text-effect.component'
 import { DiplomesListeComponent } from './components/diplomes-liste/diplomes-liste.component';
+import { ExplosionComponent } from './components/explosion/explosion.component';
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { ProjetComponent } from './components/projet/projet.component';
 import { ProjetsListeComponent } from './components/projets-liste/projets-liste.component';
@@ -29,6 +30,7 @@ import * as AOS from 'aos';
     CustomScrollbarComponent,
     CustomTextEffectComponent,
     DiplomesListeComponent,
+    ExplosionComponent,
     MainMenuComponent,
     ProjetComponent,
     ProjetsListeComponent,

@@ -1,0 +1,21 @@
+.test {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(0, 0, 0);
+    transform: translate(-50%, -50%);
+  }
+  
+  .test.animate {
+    animation: explode 10s linear forwards; // Reduced duration for better visibility
+  }
+  
+  @keyframes explode {
+    0% {
+      transform: scale(1) translateY(0) rotate(0); // Initial state
+    }
+    100% {
+      transform: scale(1) translateY(1000px) rotate(300deg);
+    }
+  }
+  

@@ -1,35 +1,43 @@
-import { Component, ElementRef, Renderer2, AfterViewInit, HostListener } from '@angular/core';
+import { Component, ElementRef, Renderer2, AfterViewInit, ViewChild, HostListener } from '@angular/core';
 import { RandomNumberService } from '../../services/random-number.service';
+import { ExplosionComponent } from '../explosion/explosion.component';
 
 @Component({
   selector: 'app-box',
   standalone: true,
-  imports: [],
+  imports: [ExplosionComponent],
   templateUrl: './box.component.html',
   styleUrls: ['./box.component.scss']
 })
 export class BoxComponent implements AfterViewInit {
-
+  triggerExplosion = false;
   timeAnimation = 5;
   top = 10;
   left = 6;
 
-  constructor(private randomNumberService: RandomNumberService, 
-              private elementRef: ElementRef,
-              private renderer: Renderer2) {
-  }
+  // Use static: false so the element is only queried after view initialization
+  @ViewChild('box', { static: false }) boxElement?: ElementRef;
+
+  constructor(
+    private randomNumberService: RandomNumberService,
+    private renderer: Renderer2
+  ) {}
 
   ngAfterViewInit(): void {
+    if (!this.boxElement) {
+      console.error('Box element not found!');
+      return;
+    }
     this.generateValue();
     this.setValue();
-    this.renderer.listen(this.elementRef.nativeElement, 'animationiteration', () => this.onAnimationEnd());
+
+    // Listen for the 'animationiteration' event on the box element.
+    this.renderer.listen(this.boxElement.nativeElement, 'animationiteration', () => this.onAnimationEnd());
   }
 
   onAnimationEnd(): void {
-    //console.log("Anim end");
     this.generateValue();
     this.setValue();
-
   }
 
   generateValue(): void {
@@ -40,37 +48,25 @@ export class BoxComponent implements AfterViewInit {
   }
 
   setValue(): void {
-    this.renderer.setStyle(this.elementRef.nativeElement, 'animation-duration', `${this.timeAnimation}s`);
-    this.renderer.setStyle(this.elementRef.nativeElement, 'display', 'none');
+    if (!this.boxElement) return;
+    // Hide the box, update styles, then show it again
+    this.renderer.setStyle(this.boxElement.nativeElement, 'display', 'none');
     setTimeout(() => {
-      this.renderer.setStyle(this.elementRef.nativeElement, 'top', `${this.top}%`);
-      this.renderer.setStyle(this.elementRef.nativeElement, 'left', `${this.left}%`);
-      this.renderer.setStyle(this.elementRef.nativeElement, 'display', 'block');
-    }, 100);
-
-
+      this.renderer.setStyle(this.boxElement?.nativeElement, 'animation-duration', `${this.timeAnimation}s`);
+      this.renderer.setStyle(this.boxElement?.nativeElement, 'top', `${this.top}%`);
+      this.renderer.setStyle(this.boxElement?.nativeElement, 'left', `${this.left}%`);
+      setTimeout(() => {
+        this.renderer.setStyle(this.boxElement?.nativeElement, 'display', 'block');
+      }, 100);
+    }, 400);
   }
 
   @HostListener('mousemove', ['$event'])
-  onMouseMove(event: MouseEvent) {
-    this.renderer.setStyle(this.elementRef.nativeElement, 'display', 'none');
+  onMouseMove(event: MouseEvent): void {
+    if (!this.boxElement) return;
+    this.renderer.setStyle(this.boxElement.nativeElement, 'display', 'none');
     this.generateValue();
     this.setValue();
-    /*const mouseX = event.clientX; // Position X de la souris
-    const mouseY = event.clientY; // Position Y de la souris
-
-    // Récupérer la position actuelle du composant
-    const rect = this.elementRef.nativeElement.getBoundingClientRect();
-    const componentCenterX = rect.left + rect.width / 2; // Centre du composant
-    const componentCenterY = rect.top + rect.height / 2; // Centre du composant
-    const distanceX = mouseX - componentCenterX;
-    const distanceY = mouseY - componentCenterY;
-    const newLeft = Math.max(0, Math.min(window.innerWidth - rect.width, (rect.width / 2-distanceX) + rect.left));
-    const newTop = Math.max(0, Math.min(window.innerHeight - rect.height, (rect.height/2-distanceY) + rect.top));
-
-    // Appliquer les nouvelles positions
-    this.elementRef.nativeElement.style.left = newLeft + 'px';
-    this.elementRef.nativeElement.style.top = newTop + 'px';*/
+    this.triggerExplosion = true;
   }
-
 }
