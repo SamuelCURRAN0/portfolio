@@ -8,7 +8,8 @@
         "nom": "AlgoForge",
         "description": [
           {
-            "image": "AlgoForge.png"
+            "image": "AlgoForge.png",
+            "invertImage": true
           },
           {
             "texte": "AlgoForge est un outil innovant qui remplace TabulaRasa, une plateforme d'édition algorithmique, en intégrant une fonctionnalité de détection d'anomalies. L'application permet aux utilisateurs d'identifier et de corriger les erreurs dans leurs algorithmes de manière efficace. Développé pendant mon cursus scolaire à l'IUT de Bayonne et du Pays Basque, ce projet a été un excellent moyen d'approfondir mes compétences en programmation. TabulaRasa, l'ancien projet, a été remplacé par AlgoForge pour offrir une meilleure expérience aux utilisateurs."
@@ -20,6 +21,7 @@
           }
         ],
         "image": "AlgoForge.png",
+        "invertImage": true,
         "tags": ["JavaScript", "GestionDeProjet"],
         "lienGithub": "https://github.com/Bing-Chill-inc/Algoforge",
         "lienSiteWeb": "https://www.algoforge.fr/"

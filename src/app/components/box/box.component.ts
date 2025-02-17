@@ -1,6 +1,6 @@
 import { Component, ElementRef, Renderer2, AfterViewInit, ViewChild, HostListener } from '@angular/core';
 import { RandomNumberService } from '../../services/random-number.service';
-import { ExplosionComponent } from '../explosion/explosion.component';
+import { ExplosionComponent, TransformInfo } from '../explosion/explosion.component';
 
 @Component({
   selector: 'app-box',
@@ -10,14 +10,13 @@ import { ExplosionComponent } from '../explosion/explosion.component';
   styleUrls: ['./box.component.scss']
 })
 export class BoxComponent implements AfterViewInit {
-  triggerExplosion = false;
   timeAnimation = 5;
   top = 10;
   left = 6;
 
   // Use static: false so the element is only queried after view initialization
   @ViewChild('box', { static: false }) boxElement?: ElementRef;
-
+  @ViewChild(ExplosionComponent) explosionElement!: ExplosionComponent;
   constructor(
     private randomNumberService: RandomNumberService,
     private renderer: Renderer2
@@ -60,13 +59,47 @@ export class BoxComponent implements AfterViewInit {
       }, 100);
     }, 400);
   }
-
+  getRotation(element: HTMLElement): number {
+    const transformMatrix = getComputedStyle(element).transform;
+  
+    if (transformMatrix === 'none') {
+      return 0; // No rotation applied
+    }
+  
+    const matrixValues = transformMatrix.match(/matrix\(([^)]+)\)/);
+    if (!matrixValues) {
+      return 0;
+    }
+  
+    const values = matrixValues[1].split(',').map(parseFloat);
+    const a = values[0], b = values[1];
+    
+    return Math.round(Math.atan2(b, a) * (180 / Math.PI)); // Convert radians to degrees
+  }
+  
   @HostListener('mousemove', ['$event'])
   onMouseMove(event: MouseEvent): void {
     if (!this.boxElement) return;
-    this.renderer.setStyle(this.boxElement.nativeElement, 'display', 'none');
-    this.generateValue();
-    this.setValue();
-    this.triggerExplosion = true;
-  }
+  
+    const rect = this.boxElement.nativeElement.getBoundingClientRect(); // Get accurate size and position
+  
+    const transform: TransformInfo = {
+      rotation: this.getRotation(this.boxElement.nativeElement),
+      size: { 
+        width: rect.width, // More accurate than offsetWidth
+        height: rect.height 
+      },
+      position: { 
+        top: rect.top + window.scrollY,  // Convert relative to absolute position
+        left: rect.left + window.scrollX
+      }
+    };
+    this.explosionElement.explosion(transform);
+    setTimeout(() => {
+      if (!this.boxElement) return;
+      this.renderer.setStyle(this.boxElement.nativeElement, 'display', 'none');
+      this.generateValue();
+      this.setValue();
+    }, 3000);
+  }  
 }

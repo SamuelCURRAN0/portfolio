@@ -1,6 +1,6 @@
 <div class="project">
     <div class="img-container">
-        <img [src]="'assets/images/' + project.image" alt="{{ project.nom }}" />
+        <img [src]="'assets/images/' + project.image" [ngClass]="{'invert-image': project.invertImage}" alt="{{ project.nom }}" />
     </div>
     <h3>{{ project.nom }}</h3>
     <div class="tags">

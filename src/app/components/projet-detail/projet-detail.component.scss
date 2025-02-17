@@ -6,7 +6,6 @@
     text-align: center;
     font-size: 14px;
 }
-
 .link-button {
     margin: 2px;
 }
@@ -63,4 +62,8 @@
 .modal-content {
   background-color: var(--primary-bg) !important;
   color: var(--text-color) !important;
+}
+
+.invert-image {
+  filter: invert(100%);
 }

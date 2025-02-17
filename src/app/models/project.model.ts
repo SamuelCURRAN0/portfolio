@@ -5,6 +5,7 @@ export class Project {
         public description: any[],
         public image: string,
         public tags: ProjectTag[] ,
+        public invertImage?: boolean,
         public lienGithub?: string,
         public lienSiteWeb?: string
     ) {}

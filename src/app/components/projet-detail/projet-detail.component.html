@@ -13,7 +13,7 @@
               </span>
             </ng-container>
           </div>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <ng-container *ngIf="project; else noProject">
@@ -21,15 +21,14 @@
             <ng-container *ngFor="let item of project?.description">
               <!-- Si c'est un texte -->
               <p *ngIf="item.texte">{{ item.texte }}</p>
-            
               <!-- Si c'est une image -->
               <ng-container *ngIf="item.image">
                 <ng-container *ngIf="item.width; else noWidth">
-                  <img *ngIf="item.image" [src]="'assets/images/' + item.image" alt="Image du projet"  
+                  <img *ngIf="item.image" [src]="'assets/images/' + item.image" alt="Image du projet" [ngClass]="{'invert-image': item.invertImage}"  
                   [style.width.px]="item.width" style="height: auto; margin: 0 auto;">
                 </ng-container>
                 <ng-template #noWidth>
-                  <img *ngIf="item.image" [src]="'assets/images/' + item.image" alt="Image du projet">
+                  <img *ngIf="item.image" [src]="'assets/images/' + item.image" alt="Image du projet" [ngClass]="{'invert-image': item.invertImage}" >
                 </ng-template>
                 <ng-container *ngIf="item.libelle">
                   <p class="libelle">{{ item.libelle }}</p>
