@@ -1,66 +1,73 @@
 .project {
-    width:20em;
-    height:25em;
-    background: var(--secondary-bg);
-    border-radius: 20px;
-    position: relative;
-    flex: 1 1 200em;
-    box-shadow: 0 1em 1em rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    padding-left: 2em;
-    padding-right: 2em;
-    cursor: pointer;
+  width: 20em;
+  height: 25em;
+  background: var(--secondary-bg);
+  border-radius: 20px;
+  position: relative;
+  flex: 1 1 200em;
+  box-shadow: 0 1em 1em rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding-left: 2em;
+  padding-right: 2em;
+  cursor: pointer;
 }
+
 .project * {
-    position: relative;
-    z-index: 1;
-  }
+  position: relative;
+  z-index: 1;
+}
+
 .project:hover::before {
-    content: '';
-    position: absolute;
-    width: 100px;
-    background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
-    height: 130%;
-    animation: rotBGimg 3s linear infinite;
-    transition: all 0.2s linear;
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 130%;
+  background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+  animation: rotBGimg 3s linear infinite;
+  transition: all 0.2s linear;
+  left: 50%;            
+  top: 50%;               
+  transform: translate(-50%, -50%); 
+  transform-origin: center;
+}
+
+@keyframes rotBGimg {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
   }
-  @keyframes rotBGimg {
-    from {
-      transform: rotate(0deg);
-    }
-  
-    to {
-      transform: rotate(360deg);
-    }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
-  
+}
+
 .project::after {
-    content: '';
-    position: absolute;
-    background-color: var(--secondary-bg);
-    ;
-    inset: 5px;
-    border-radius: 15px;
-  }
-.img-container{
-    max-height: 20em;
-    padding-top: 1em;
-    padding-bottom: 1em;
+  content: '';
+  position: absolute;
+  background-color: var(--secondary-bg);
+  inset: 5px;
+  border-radius: 15px;
+}
+
+.img-container {
+  max-height: 20em;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 .tags {
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 10px;
-    margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .tag {
-    padding: 8px 12px;
-    border-radius: 20px; 
-    font-size: 14px; 
-    display: inline-block; 
-    white-space: nowrap; 
-    transition: background-color 0.3s, transform 0.3s, font-size 0.3s; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  display: inline-block;
+  white-space: nowrap;
+  transition: background-color 0.3s, transform 0.3s, font-size 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
