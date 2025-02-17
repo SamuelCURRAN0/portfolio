@@ -1,40 +1,25 @@
 .item {
     z-index: 42;
     position: relative;
-    width: 5px;
-    height: 5px;
-    background-color: rgb(0, 0, 0);
+    width: 2px;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
     top: 100%;
     left: 0%;
     transform: translate(-50%, -50%);
     transform-origin: center;
   }
   
-  .test.animate {
-    animation: explode 10s linear forwards; // Reduced duration for better visibility
-  }
   
 .middle {
   position: absolute;
-  //background-color: rgba(0, 255, 255, 0.11);
   transform: translate(-50%, -50%);
-  animation: explode 2s linear forwards;
 }
-
 @keyframes explode {
   0% {
-    transform: scale(0); // Initial state
+    transform: translate(-50%, -50%) scale(1);  // Initial state
   }
   100% {
-    transform: scale(5);
+    transform: translate(-50%, -50%) scale(5);
   }
 }
-/*@keyframes explode {
-  0% {
-    transform: scale(1) translateY(0) rotate(0); // Initial state
-  }
-  100% {
-    transform: scale(1) translateY(1000px) rotate(300deg);
-  }
-}*/
-  

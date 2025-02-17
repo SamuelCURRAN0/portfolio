@@ -1,6 +1,8 @@
 import { Component, ElementRef, Renderer2, AfterViewInit, ViewChild, HostListener } from '@angular/core';
 import { RandomNumberService } from '../../services/random-number.service';
 import { ExplosionComponent, TransformInfo } from '../explosion/explosion.component';
+import { time } from 'node:console';
+import { last } from 'rxjs';
 
 @Component({
   selector: 'app-box',
@@ -13,7 +15,6 @@ export class BoxComponent implements AfterViewInit {
   timeAnimation = 5;
   top = 10;
   left = 6;
-
   // Use static: false so the element is only queried after view initialization
   @ViewChild('box', { static: false }) boxElement?: ElementRef;
   @ViewChild(ExplosionComponent) explosionElement!: ExplosionComponent;
@@ -80,7 +81,6 @@ export class BoxComponent implements AfterViewInit {
   @HostListener('mousemove', ['$event'])
   onMouseMove(event: MouseEvent): void {
     if (!this.boxElement) return;
-  
     const rect = this.boxElement.nativeElement.getBoundingClientRect(); // Get accurate size and position
   
     const transform: TransformInfo = {
@@ -94,6 +94,10 @@ export class BoxComponent implements AfterViewInit {
         left: rect.left + window.scrollX
       }
     };
+    if(transform.position.left == 0 && transform.position.top == 0){
+      return;
+    }
+    this.renderer.setStyle(this.boxElement.nativeElement, 'display', 'none');
     this.explosionElement.explosion(transform);
     setTimeout(() => {
       if (!this.boxElement) return;
