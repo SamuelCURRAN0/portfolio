@@ -1,8 +1,6 @@
 import { Component, ElementRef, Renderer2, AfterViewInit, ViewChild, HostListener } from '@angular/core';
 import { RandomNumberService } from '../../services/random-number.service';
 import { ExplosionComponent, TransformInfo } from '../explosion/explosion.component';
-import { time } from 'node:console';
-import { last } from 'rxjs';
 
 @Component({
   selector: 'app-box',
@@ -18,6 +16,7 @@ export class BoxComponent implements AfterViewInit {
   // Use static: false so the element is only queried after view initialization
   @ViewChild('box', { static: false }) boxElement?: ElementRef;
   @ViewChild(ExplosionComponent) explosionElement!: ExplosionComponent;
+  
   constructor(
     private randomNumberService: RandomNumberService,
     private renderer: Renderer2
@@ -51,15 +50,21 @@ export class BoxComponent implements AfterViewInit {
     if (!this.boxElement) return;
     // Hide the box, update styles, then show it again
     this.renderer.setStyle(this.boxElement.nativeElement, 'display', 'none');
+    
     setTimeout(() => {
-      this.renderer.setStyle(this.boxElement?.nativeElement, 'animation-duration', `${this.timeAnimation}s`);
-      this.renderer.setStyle(this.boxElement?.nativeElement, 'top', `${this.top}%`);
-      this.renderer.setStyle(this.boxElement?.nativeElement, 'left', `${this.left}%`);
+      if (!this.boxElement) return;
+      // Fixed template string syntax
+      this.renderer.setStyle(this.boxElement.nativeElement, 'animation-duration', `${this.timeAnimation}s`);
+      this.renderer.setStyle(this.boxElement.nativeElement, 'top', `${this.top}%`);
+      this.renderer.setStyle(this.boxElement.nativeElement, 'left', `${this.left}%`);
+      
       setTimeout(() => {
-        this.renderer.setStyle(this.boxElement?.nativeElement, 'display', 'block');
+        if (!this.boxElement) return;
+        this.renderer.setStyle(this.boxElement.nativeElement, 'display', 'block');
       }, 100);
     }, 400);
   }
+  
   getRotation(element: HTMLElement): number {
     const transformMatrix = getComputedStyle(element).transform;
   
@@ -94,16 +99,20 @@ export class BoxComponent implements AfterViewInit {
         left: rect.left + window.scrollX
       }
     };
-    if(transform.position.left == 0 && transform.position.top == 0){
+    
+    // Skip if invalid position
+    if(transform.position.left === 0 && transform.position.top === 0){
       return;
     }
+    
     this.renderer.setStyle(this.boxElement.nativeElement, 'display', 'none');
     this.explosionElement.explosion(transform);
+    
+    // Reset and generate new box
     setTimeout(() => {
       if (!this.boxElement) return;
-      this.renderer.setStyle(this.boxElement.nativeElement, 'display', 'none');
       this.generateValue();
       this.setValue();
-    }, 3000);
+    }, 1500); // Reduced from 3000 to make it more responsive
   }  
 }

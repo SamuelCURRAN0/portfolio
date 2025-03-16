@@ -80,9 +80,10 @@ section {
     position: relative;
     display: flex;
     flex-direction: column;
-    min-height: 400px;
+    min-height: 300px;
     padding: 50px 0;
 }
 section.end {
     padding-bottom: 0;
+    margin-bottom: 0;
 }
