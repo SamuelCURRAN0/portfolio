@@ -15,7 +15,8 @@ import { ProjetComponent } from './components/projet/projet.component';
 import { ProjetsListeComponent } from './components/projets-liste/projets-liste.component';
 import { ProjetDetailComponent } from './components/projet-detail/projet-detail.component';
 import { Project } from './models/project.model'; 
-import * as AOS from 'aos';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 @Component({
   selector: 'app-root',
