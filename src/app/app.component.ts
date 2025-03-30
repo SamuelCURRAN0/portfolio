@@ -7,6 +7,7 @@ import { ButonThemeComponent } from './components/buton-theme/buton-theme.compon
 import { CompetencesListeComponent } from './components/competences-liste/competences-liste.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { CustomScrollbarComponent } from './components/custom-scrollbar/custom-scrollbar.component';
+import { CommonModule } from '@angular/common';
 import { CustomTextEffectComponent } from './components/custom-text-effect/custom-text-effect.component'
 import { DiplomesListeComponent } from './components/diplomes-liste/diplomes-liste.component';
 import { ExplosionComponent } from './components/explosion/explosion.component';
@@ -19,26 +20,19 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    RouterOutlet,
-    AProposComponent,
-    BoxComponent,
-    ButonThemeComponent,
-    CompetencesListeComponent,
-    ContactComponent,
-    CustomScrollbarComponent,
-    CustomTextEffectComponent,
-    DiplomesListeComponent,
-    ExplosionComponent,
-    MainMenuComponent,
-    ProjetComponent,
-    ProjetsListeComponent,
-    ProjetDetailComponent
-  ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+    selector: 'app-root',
+    standalone: true, 
+    imports: [
+        AProposComponent,
+        CompetencesListeComponent,
+        ContactComponent,
+        DiplomesListeComponent,
+        MainMenuComponent,
+        ProjetsListeComponent,
+        ProjetDetailComponent,
+    ],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit, AfterViewInit {
   selectedProject: Project | null = null;

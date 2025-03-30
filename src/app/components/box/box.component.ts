@@ -3,11 +3,11 @@ import { RandomNumberService } from '../../services/random-number.service';
 import { ExplosionComponent, TransformInfo } from '../explosion/explosion.component';
 
 @Component({
-  selector: 'app-box',
-  standalone: true,
-  imports: [ExplosionComponent],
-  templateUrl: './box.component.html',
-  styleUrls: ['./box.component.scss']
+    selector: 'app-box',
+    standalone: true, 
+    imports: [ExplosionComponent],
+    templateUrl: './box.component.html',
+    styleUrls: ['./box.component.scss']
 })
 export class BoxComponent implements AfterViewInit {
   timeAnimation = 5;

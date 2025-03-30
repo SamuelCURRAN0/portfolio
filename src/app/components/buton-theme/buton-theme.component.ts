@@ -1,11 +1,10 @@
 import { Component, Renderer2 } from '@angular/core';
 
 @Component({
-  selector: 'app-buton-theme',
-  standalone: true,
-  imports: [],
-  templateUrl: './buton-theme.component.html',
-  styleUrls: ['./buton-theme.component.scss'] 
+    selector: 'app-buton-theme',
+    imports: [],
+    templateUrl: './buton-theme.component.html',
+    styleUrls: ['./buton-theme.component.scss']
 })
 export class ButonThemeComponent {
   isDarkTheme: boolean = true;

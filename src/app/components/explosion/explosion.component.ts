@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { RandomNumberService } from '../../services/random-number.service'; 
 
 @Component({
-  selector: 'app-explosion',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './explosion.component.html',
-  styleUrls: ['./explosion.component.scss']
+    selector: 'app-explosion',
+    imports: [CommonModule],
+    standalone: true, 
+    templateUrl: './explosion.component.html',
+    styleUrls: ['./explosion.component.scss']
 })
 export class ExplosionComponent implements AfterViewInit {
   @ViewChildren('testElements') testElements!: QueryList<ElementRef>;

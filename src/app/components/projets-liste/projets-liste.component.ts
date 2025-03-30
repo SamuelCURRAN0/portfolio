@@ -3,15 +3,14 @@ import { Component, HostListener, Output, EventEmitter } from '@angular/core';
 import { Project } from '../../models/project.model'; 
 import { ProjectTag } from '../../models/project-tag.enum'; 
 import { ProjetComponent } from '../projet/projet.component';
-import { ProjetDetailComponent } from '../projet-detail/projet-detail.component';
 import { TranslationContentService } from '../../services/translation-content.service';
 
 @Component({
-  selector: 'app-projets-liste',
-  standalone: true,
-  imports: [CommonModule, ProjetComponent, ProjetDetailComponent],
-  templateUrl: './projets-liste.component.html',
-  styleUrls: ['./projets-liste.component.scss'] // Corrected to 'styleUrls'
+    selector: 'app-projets-liste',
+    standalone: true, 
+    imports: [CommonModule, ProjetComponent],
+    templateUrl: './projets-liste.component.html',
+    styleUrls: ['./projets-liste.component.scss'] // Corrected to 'styleUrls'
 })
 export class ProjetsListeComponent {
   dropdownVisible = false;
