@@ -8,6 +8,7 @@
     border: 6px solid rgba(255, 255, 255, 0.8);
     transform-origin: center;
     animation: 10s animate linear infinite;
+    will-change: transform, opacity;
   }
   
   @keyframes animate {

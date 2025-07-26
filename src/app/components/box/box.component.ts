@@ -68,7 +68,7 @@ export class BoxComponent implements AfterViewInit {
   getRotation(element: HTMLElement): number {
     const transformMatrix = getComputedStyle(element).transform;
   
-    if (transformMatrix === 'none') {
+    if (transformMatrix === 'none' || !transformMatrix) {
       return 0; // No rotation applied
     }
   
