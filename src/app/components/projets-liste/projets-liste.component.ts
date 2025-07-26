@@ -6,11 +6,11 @@ import { ProjetComponent } from '../projet/projet.component';
 import { TranslationContentService } from '../../services/translation-content.service';
 
 @Component({
-  selector: 'app-projets-liste',
-  standalone: true,
-  imports: [CommonModule, ProjetComponent],
-  templateUrl: './projets-liste.component.html',
-  styleUrls: ['./projets-liste.component.scss'] // Corrected to 'styleUrls'
+    selector: 'app-projets-liste',
+    standalone: true,
+    imports: [CommonModule, ProjetComponent],
+    templateUrl: './projets-liste.component.html',
+    styleUrls: ['./projets-liste.component.scss'] // Corrected to 'styleUrls'
 })
 export class ProjetsListeComponent {
   dropdownVisible = false;
