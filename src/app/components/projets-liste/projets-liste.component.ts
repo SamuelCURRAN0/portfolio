@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Output, EventEmitter } from '@angular/core';
 import { Project } from '../../models/project.model'; 
 import { ProjectTag } from '../../models/project-tag.enum'; 
 import { ProjetComponent } from '../projet/projet.component';
@@ -19,7 +19,8 @@ export class ProjetsListeComponent {
 
   projectsTags: string[] = [];
   checkboxStates: { [key: string]: boolean } = {};
-  selectedProject: Project | null = null; // Store the selected project here
+  selectedProject: Project | null = null;
+  @Output() projectSelected = new EventEmitter<Project>();
 
   constructor(public translationContentService: TranslationContentService) { }
   ngOnInit() {
@@ -43,6 +44,7 @@ export class ProjetsListeComponent {
 
   selectProject(project: Project) {
     this.selectedProject = project;
+    this.projectSelected.emit(project);
   }
 
   openModal() {

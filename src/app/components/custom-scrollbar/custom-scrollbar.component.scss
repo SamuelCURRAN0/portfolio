@@ -1,0 +1,31 @@
+#custom-scrollbar {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px; 
+    padding: 20px;   
+    z-index: 9999;  
+    overflow-y: auto;  
+    height: 100vh;  
+  
+    display: flex;     
+    flex-direction: column; 
+    justify-content: center; 
+    text-align: center;    
+  }
+  
+  #custom-scrollbar div {
+    position: relative;             
+    width: 20px;           // Largeur du cercle
+    height: 20px;          // Hauteur du cercle
+    border: 2px solid #000000; // Bordure verte (vous pouvez changer la couleur)
+    border-radius: 50%;    // Arrondir pour former un cercle
+    background-color: transparent; // Centre vide
+    margin: 10px 0;
+  }
+  #custom-scrollbar div::before {
+    content: '';           // Le pseudo-élément doit avoir un contenu (vide ici)
+    position: absolute;    // Positionné de manière absolue par rapport au div
+
+  }

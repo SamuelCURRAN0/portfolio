@@ -1,0 +1,46 @@
+.competences-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  gap: 20px; 
+  justify-content: center;
+  height: 500px;
+}
+
+
+.categorie {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  padding: 15px 15px 0 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; 
+  justify-content: center; 
+}
+
+.skill {
+
+  border-radius: 3px;
+  background-color: white;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  color: rgb(0, 12, 99);
+  display: inline-block;
+}
+
+.categorie:hover .title {
+  text-decoration: underline;
+}

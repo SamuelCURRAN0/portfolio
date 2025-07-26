@@ -1,19 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 /* General Styles */
-body {
-    font-family: 'Inter', sans-serif; 
+@import "styles/variables";
+
+* {
+    font-family: 'Poppins', sans-serif; 
     margin: 0;
-    user-select: none; /* Prevents text selection */
-    -webkit-user-select: none; /* For Safari */
-    -moz-user-select: none; /* For Firefox */
-    -ms-user-select: none; /* For Internet Explorer/Edge */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none; 
+    -ms-user-select: none;
 }
 .selectable {
     user-select: text;
     -webkit-user-select: text; 
     -moz-user-select: text;
     -ms-user-select: text; 
-  }
+}
 h2 {
     user-select: text;
     -webkit-user-select: text; 
@@ -23,13 +25,19 @@ h2 {
     font-size: 24px;
     margin-bottom: 20px;
 }
-
+body {
+    background-color: var(--primary-bg) !important;
+    color: var(--text-color) !important;
+}
 h2::before {
     content: "~ ";
 }
 h2::after {
     content: " ~";
 }
+body::-webkit-scrollbar {
+    display: none;
+  }
 
 img {
     display: block;
@@ -72,14 +80,10 @@ section {
     position: relative;
     display: flex;
     flex-direction: column;
-    min-height: 400px;
+    min-height: 350px;
     padding: 50px 0;
 }
 section.end {
     padding-bottom: 0;
-}
-
-.color-black{
-    background-color: #000000; /* Soft red */
-    color: #fff; /* White text for contrast */
+    margin-bottom: 0;
 }

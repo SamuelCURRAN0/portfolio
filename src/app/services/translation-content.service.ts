@@ -34,4 +34,9 @@ export class TranslationContentService {
     const content = this.contentSubject.getValue();
     return content ? content.projets : undefined; // Return the diplomas array
   }
+
+  getCompetences(): any[] | undefined {
+      const content = this.contentSubject.getValue();
+      return content ? content.competences : undefined;
+  }
 }

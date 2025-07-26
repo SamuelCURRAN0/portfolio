@@ -1,0 +1,25 @@
+.item {
+    z-index: 42;
+    position: relative;
+    width: 2px;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    top: 100%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+  }
+  
+  
+.middle {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+@keyframes explode {
+  0% {
+    transform: translate(-50%, -50%) scale(1);  // Initial state
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(5);
+  }
+}

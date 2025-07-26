@@ -1,17 +1,17 @@
-:root {
-    --main-color: #3498db; // Define a CSS variable
-  }
-  
+
 .main-menu {
-    height: 100vh;
+    height: 110vh;
     width: 100%;
+    padding-bottom: 10vh;
+    overflow: hidden;
+    background: 
+    linear-gradient(to top, var(--primary-bg), transparent 10%), 
+    linear-gradient(90deg,rgba(2,0,.6,1), 5%, var(--blue-bg) 30%, rgb(0, 89, 255) 100%);
 }
 .wrapper {
     position: absolute;
     width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background: linear-gradient(90deg,rgba(2,0,.6,1), 5%, rgba(9,9,121,1) 30%, rgb(0, 89, 255) 100%);
+    height: 100vh ;
 }
 // Styling for Name
 .name {
@@ -19,7 +19,17 @@
     font-weight: bold; 
 }
 
-
+#selectionLangue{
+    position: absolute;
+    top: 4%;
+    left: 96%;
+}
+#selectionLangue::after{
+    content: '⌄';
+    font-size: 25px;
+    position: relative;
+    top: -4px; 
+}
 .portfolio {
     font-size: 50px; 
     margin-top: 10px;
@@ -37,20 +47,36 @@
     margin: 0;
 }
 
-#lang {
+.right-menu {
     position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: row; /* Par défaut, flex affiche en ligne */
+    align-items: center;
+    gap: 15px; /* Espace entre les éléments */
+    z-index: 10; /* Pour être sûr qu'ils soient par-dessus d'autres éléments */
+}
+
+/* Si <app-buton-theme> a des styles internes qui le rendent en block complet,
+   force-le à être inline-flex */
+app-buton-theme {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Bouton de langue */
+#lang {
     border: none;
     background-color: transparent;
     color: white;
-    top: 1%;
-    left: 99%;
-    transform: translate(-100%, 0);
-    display: flex; /* Use flexbox to align items */
-    align-items: center; /* Center the items vertically */
-    font-size: 16px; /* Adjust font size as needed */
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
 }
 
 #lang i {
-    margin-left: 5px; /* Add some space between the text and icon */
-    font-size: 16px; /* Ensure the icon size matches the text size */
+    margin-left: 5px;
+    font-size: 16px;
 }

@@ -8,7 +8,8 @@
             "name": "AlgoForge",
             "description": "AlgoForge is an innovative tool that replaces TabulaRasa, an algorithmic editing platform, by integrating an anomaly detection feature. The application allows users to efficiently identify and correct errors in their algorithms. Developed during my studies, this project was an excellent opportunity to deepen my programming skills.",
             "image": "AlgoForge.png",
-            "tags": ["JavaScript", "ProjectManagement"]
+            "tags": ["JavaScript", "ProjectManagement"],
+            "lienGithub": "https://github.com/Bing-Chill-inc/Algoforge"
         },
         {
             "name": "Package Counting Application",
@@ -20,13 +21,15 @@
             "name": "CD Catalogue",
             "description": "This mini school project offers an application that allows an administrator to add and remove CDs, as well as simulate a payment as a customer. This project helped me familiarize myself with PHP and MySQL.",
             "image": "cd.avif",
-            "tags": ["JavaScript", "PHP", "MySQL"]
+            "tags": ["JavaScript", "PHP", "MySQL"],
+            "lienGithub": "https://github.com/Fetnmax/catalogueCDAngular"
         },
         {
             "name": "Hot Sauce",
             "description": "A mini school project allowing users to create an account, add sauces, and like or dislike sauces. Developed with Laravel, this project illustrates my backend development and database management skills.",
             "image": "hot-deal.png",
-            "tags": ["Laravel", "MySQL"]
+            "tags": ["Laravel", "MySQL"],
+            "lienGithub": "https://github.com/Fetnmax/ProjetLaravel"
         },
         {
             "name": "Chat Server",
@@ -42,6 +45,20 @@
         }
     ],
     "skills-title": "Skills",
+    "competences": [
+        {
+            "nom": "PHP",
+            "categorie": "BackEnd"
+        },
+        {
+            "nom": "C",
+            "categorie": "BackEnd"
+        },
+        {
+            "nom": "JavaScript",
+            "categorie": "FrontEnd"
+        }
+    ],
     "degrees-title": "Degrees",
     "degrees": [
         {
