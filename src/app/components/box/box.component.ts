@@ -83,24 +83,20 @@ export class BoxComponent implements AfterViewInit {
     return Math.round(Math.atan2(b, a) * (180 / Math.PI)); // Convert radians to degrees
   }
   
-  @HostListener('mousemove', ['$event'])
-  onMouseMove(event: MouseEvent): void {
+  onMouseEnter() {
     if (!this.boxElement) return;
-    const rect = this.boxElement.nativeElement.getBoundingClientRect(); // Get accurate size and position
-  
+    const rect = this.boxElement.nativeElement.getBoundingClientRect(); 
     const transform: TransformInfo = {
       rotation: this.getRotation(this.boxElement.nativeElement),
       size: { 
-        width: rect.width, // More accurate than offsetWidth
+        width: rect.width, 
         height: rect.height 
       },
       position: { 
-        top: rect.top + window.scrollY,  // Convert relative to absolute position
+        top: rect.top + window.scrollY,
         left: rect.left + window.scrollX
       }
     };
-    
-    // Skip if invalid position
     if(transform.position.left === 0 && transform.position.top === 0){
       return;
     }
@@ -108,11 +104,10 @@ export class BoxComponent implements AfterViewInit {
     this.renderer.setStyle(this.boxElement.nativeElement, 'display', 'none');
     this.explosionElement.explosion(transform);
     
-    // Reset and generate new box
     setTimeout(() => {
       if (!this.boxElement) return;
       this.generateValue();
       this.setValue();
-    }, 1500); // Reduced from 3000 to make it more responsive
-  }  
+    }, 500);
+  }
 }
