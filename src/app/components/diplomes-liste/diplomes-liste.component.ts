@@ -15,9 +15,5 @@ export class DiplomesListeComponent {
   
   ngOnInit(): void {
     this.diplomes = this.translationContentService.getDiplomes() || []; // Get diplomas when content is loaded
-    /*this.translationContentService.content$.subscribe(content => {
-      if (content) {
-      }
-    });*/
   }
 }
