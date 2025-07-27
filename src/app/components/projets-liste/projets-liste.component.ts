@@ -25,20 +25,19 @@ export class ProjetsListeComponent {
   ngOnInit() {
     this.translationContentService.getProjets$().subscribe((projects: Project[]) => {
       this.projects = projects;
-    });
-
-    for (const project of this.projects) {
+      for (const project of this.projects) {
         project.tags.sort();
         project.tags = project.tags.map(tag => ProjectTag[tag as keyof typeof ProjectTag]);
         for (const tag of project.tags) {
           if (!this.projectsTags.includes(tag)) {
               this.projectsTags.push(tag);
           }
+        }
       }
-    }
-    this.projectsTags.sort();
-    this.projectsTags.forEach(tag => {
-        this.checkboxStates[tag] = true;
+      this.projectsTags.sort();
+      this.projectsTags.forEach(tag => {
+          this.checkboxStates[tag] = true;
+      });
     });
 }
 

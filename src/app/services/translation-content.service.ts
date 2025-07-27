@@ -39,9 +39,7 @@ export class TranslationContentService {
           return of(null);
         }),
         tap(data => {
-          if (data) {
-            console.log('[TranslationContentService] JSON loaded:', data);
-          } else {
+          if (!data) {
             console.warn('[TranslationContentService] Loaded data is null or empty.');
           }
         })
@@ -83,26 +81,5 @@ export class TranslationContentService {
     return this.content$.pipe(
       map(data => data['competences'] ?? [])
     );
-  }
-
-  // Legacy synchronous methods for backward compatibility
-  getContent(param: string): string | undefined {
-    const content = this.contentSubject.getValue();
-    return content ? content[param] : undefined;
-  }
-
-  getDiplomes(): any[] | undefined {
-    const content = this.contentSubject.getValue();
-    return content ? content.diplomes : undefined;
-  }
-
-  getProjets(): any[] | undefined {
-    const content = this.contentSubject.getValue();
-    return content ? content.projets : undefined;
-  }
-
-  getCompetences(): any[] | undefined {
-    const content = this.contentSubject.getValue();
-    return content ? content.competences : undefined;
   }
 }
