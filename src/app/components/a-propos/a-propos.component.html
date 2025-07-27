@@ -1,7 +1,7 @@
-<h2>{{translationContentService.getContent("a-propos-titre")}}</h2>
+<h2>{{translationContentService.getContent$("a-propos-titre") | async}}</h2>
 <div>
     <p><strong>Samuel Curran</strong></p>
-    <p>{{translationContentService.getContent("a-propos-ecole")}}</p>
-    <p>{{translationContentService.getContent("a-propos-description")}}</p>
+    <p>{{translationContentService.getContent$("a-propos-ecole") | async}}</p>
+    <p>{{translationContentService.getContent$("a-propos-description") | async}}</p>
 </div>
 

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, AsyncPipe } from '@angular/common';
 import { Component, HostListener, Output, EventEmitter } from '@angular/core';
 import { Project } from '../../models/project.model'; 
 import { ProjectTag } from '../../models/project-tag.enum'; 
@@ -8,7 +8,7 @@ import { TranslationContentService } from '../../services/translation-content.se
 @Component({
     selector: 'app-projets-liste',
     standalone: true,
-    imports: [CommonModule, ProjetComponent],
+    imports: [CommonModule, ProjetComponent, AsyncPipe],
     templateUrl: './projets-liste.component.html',
     styleUrls: ['./projets-liste.component.scss'] // Corrected to 'styleUrls'
 })
@@ -23,7 +23,9 @@ export class ProjetsListeComponent {
 
   constructor(public translationContentService: TranslationContentService) { }
   ngOnInit() {
-    this.projects = this.translationContentService.getProjets() || [];
+    this.translationContentService.getProjets$().subscribe((projects: Project[]) => {
+      this.projects = projects;
+    });
 
     for (const project of this.projects) {
         project.tags.sort();

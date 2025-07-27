@@ -1,5 +1,5 @@
 <div>
-  <h2>{{translationContentService.getContent("projets-titre")}}</h2>
+  <h2>{{translationContentService.getContent$("projets-titre") | async}}</h2>
   <div class="dropdown">
     <button
       class="btn btn-secondary dropdown-toggle"

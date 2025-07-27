@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { TranslationContentService } from '../../services/translation-content.service';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     selector: 'app-a-propos',
     standalone: true,
-    imports: [],
+    imports: [AsyncPipe],
     templateUrl: './a-propos.component.html',
     styleUrl: './a-propos.component.scss'
 })
