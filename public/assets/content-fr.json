@@ -27,6 +27,22 @@
         "lienSiteWeb": "https://www.algoforge.fr/"
       },
       {
+        "nom": "EcoFloc4Win",
+        "description": [
+          {
+            "image": "EcoFloc4Win.png",
+            "invertImage": false
+          },
+          {
+            "texte": "EcoFloc4Win est une application Windows développée lors de ma troisième année à l’IUT de Bayonne. Elle permet de mesurer la consommation électrique en temps réel. Fournit des analyses précises pour optimiser l’efficacité énergétique. Ce projet m’a permis de combiner mes compétences en algorithmique, développement d’interface et analyse de données dans un contexte professionnel concret."
+          }
+        ],
+        "image": "EcoFloc4Win.png",
+        "invertImage": false,
+        "tags": ["CPlus", "JavaScript", "GestionDeProjet"],
+        "lienGithub": "https://github.com/Ecofloc4win/Ecofloc4win"
+      },
+      {
         "nom": "Application de comptage de colis",
         "description": [
           {
