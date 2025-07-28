@@ -26,7 +26,8 @@ h2 {
     margin-bottom: 20px;
 }
 body {
-    background-color: var(--primary-bg) !important;
+    background: linear-gradient(135deg, #0c0f13, #1a1d22);
+    //background-color: var(--primary-bg) !important;
     color: var(--text-color) !important;
 }
 h2::before {

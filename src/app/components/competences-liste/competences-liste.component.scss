@@ -1,7 +1,7 @@
 .competences-container {
   display: grid;
   grid-template-columns: repeat(3, minmax(250px, 1fr));
-  gap: 20px; 
+  gap: 75px; 
   justify-content: center;
   height: 500px;
 }
@@ -15,6 +15,31 @@
   display: flex;
   flex-direction: column;
   align-items: center; 
+}
+
+.categorie.Red{
+    background: linear-gradient(135deg, #ff5252, #ff174531);
+    border: 1px solid #ff5252;
+}
+.categorie.Blue { 
+  background: linear-gradient(135deg, #448aff, #2979ff31); 
+  border: 1px solid #448aff;
+}
+.categorie.Green { 
+  background: linear-gradient(135deg, #00c853, #00e67631); 
+  border: 1px solid #00c853;
+}
+.categorie.Yellow { 
+  background: linear-gradient(135deg, #ffd600, #ffeb3b31); 
+  border: 1px solid #ffd600;
+}
+.categorie.Purple { 
+  background: linear-gradient(135deg, #7c4dff, #651fff31); 
+  border: 1px solid #7c4dff;
+}
+.categorie.Pink { 
+  background: linear-gradient(135deg, #ec407a, #d81b6031); 
+  border: 1px solid #ec407a;
 }
 
 .title {
@@ -32,15 +57,17 @@
 }
 
 .skill {
-
-  border-radius: 3px;
-  background-color: white;
-  padding: 10px 20px;
+  padding: 8px 15px;
   font-size: 1.2em;
-  color: rgb(0, 12, 99);
+  color: rgb(255, 255, 255);
   display: inline-block;
 }
 
-.categorie:hover .title {
-  text-decoration: underline;
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  filter: blur(0.5px);
+  border-radius: 10px;
+}
+.glass:hover {
+  filter: blur(0);
 }

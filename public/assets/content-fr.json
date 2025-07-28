@@ -121,32 +121,32 @@
       {
         "nom": "FrontEnd",
         "lstSkills": ["JavaScript", "HTML", "CSS", "Bootstrap", "TypeScript", "Angular"],
-        "color": "#EF4444"
+        "color": "Red"
       },
       {
         "nom": "BackEnd",
         "lstSkills": ["PHP", "Laravel", "Java", "Node.js"],
-        "color": "#60A5FA"
+        "color": "Blue"
       },
       {
         "nom": "Système / Performance",
         "lstSkills": ["C", "C++"],
-        "color": "#10B981"
+        "color": "Green"
       },
       {
         "nom": "Développement de jeux",
         "lstSkills": ["Unity"],
-        "color": "#FBBF24"
+        "color": "Yellow"
       },
       {
         "nom": "Base de données",
         "lstSkills": ["MySQL", "MongoDB", "SQLite","PostgreSQL"],
-        "color": "#8B5CF6"
+        "color": "Purple"
       },
       {
         "nom": "DevOps et Gestion de Projet",
         "lstSkills": ["Gestion de projet", "Git","Trello"],
-        "color": "#EC4899"
+        "color": "Pink"
       }
     ],
     "diplomes-titre": "Diplômes",

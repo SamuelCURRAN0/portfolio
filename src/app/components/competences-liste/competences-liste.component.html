@@ -5,14 +5,14 @@
   <div class="competences-container">
       <div *ngFor="let competence of competences" 
            class="categorie" 
-           [style.backgroundColor]="competence.color">
+           [ngClass]="competence.color">
            
           <div class="title">{{competence.nom}}</div> 
 
           <!-- Flexbox container for skills -->
           <div class="skills-container">
               <ng-container *ngFor="let skill of competence.lstSkills">
-                  <div class="skill">{{skill}}</div>
+                  <div class="skill glass">{{skill}}</div>
               </ng-container>
           </div>
       </div>

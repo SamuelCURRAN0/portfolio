@@ -62,7 +62,7 @@ export class BoxComponent implements AfterViewInit {
         if (!this.boxElement) return;
         this.renderer.setStyle(this.boxElement.nativeElement, 'display', 'block');
       }, 100);
-    }, 400);
+    }, 100);
   }
   
   getRotation(element: HTMLElement): number {
