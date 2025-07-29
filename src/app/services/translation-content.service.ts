@@ -25,7 +25,7 @@ export class TranslationContentService {
     filter((data): data is TranslationContent => data !== null)
   );
 
-  private jsonUrl = 'assets/content-fr.json';
+  private jsonUrl = 'assets/content-eng.json';
 
   constructor(private http: HttpClient) {
     this.loadContent();
