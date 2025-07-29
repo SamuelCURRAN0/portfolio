@@ -1,0 +1,168 @@
+{
+    "a-propos-titre": "À propos",
+    "a-propos-ecole": "Étudiant en BUT Informatique à Anglet (IUT de Bayonne et du Pays Basque)",
+    "a-propos-description": "Passionné par l'Informatique, je suis en train de perfectionner mes compétences en programmation et en informatique. Toujours curieux et en quête d'apprentissage, je m'intéresse particulièrement aux nouvelles technologies et à l'innovation. Motivé, je cherche à intégrer mes connaissances dans des projets concrets afin de contribuer activement au monde numérique de demain.",
+    "projets-titre": "Projets",
+    "projets": [
+      {
+        "nom": "AlgoForge",
+        "description": [
+          {
+            "image": "AlgoForge.png",
+            "invertImage": true
+          },
+          {
+            "texte": "AlgoForge est un outil innovant qui remplace TabulaRasa, une plateforme d'édition algorithmique, en intégrant une fonctionnalité de détection d'anomalies. L'application permet aux utilisateurs d'identifier et de corriger les erreurs dans leurs algorithmes de manière efficace. Développé pendant mon cursus scolaire à l'IUT de Bayonne et du Pays Basque, ce projet a été un excellent moyen d'approfondir mes compétences en programmation. TabulaRasa, l'ancien projet, a été remplacé par AlgoForge pour offrir une meilleure expérience aux utilisateurs."
+          },
+          {
+            "image": "ScreenShot/screenshot-AlgoForge1.png",
+            "width": 700,
+            "libelle": "Screen shot de l'application AlgoForge"
+          }
+        ],
+        "image": "AlgoForge.png",
+        "invertImage": true,
+        "tags": ["JavaScript", "GestionDeProjet"],
+        "lienGithub": "https://github.com/Bing-Chill-inc/Algoforge",
+        "lienSiteWeb": "https://www.algoforge.fr/"
+      },
+      {
+        "nom": "EcoFloc4Win",
+        "description": [
+          {
+            "image": "EcoFloc4Win.png",
+            "invertImage": false
+          },
+          {
+            "texte": "EcoFloc4Win est une application Windows développée lors de ma troisième année à l’IUT de Bayonne. Elle permet de mesurer la consommation électrique en temps réel. Fournit des analyses précises pour optimiser l’efficacité énergétique. Ce projet m’a permis de combiner mes compétences en algorithmique, développement d’interface et analyse de données dans un contexte professionnel concret."
+          }
+        ],
+        "image": "EcoFloc4Win.png",
+        "invertImage": false,
+        "tags": ["CPlus", "JavaScript", "GestionDeProjet"],
+        "lienGithub": "https://github.com/Ecofloc4win/Ecofloc4win"
+      },
+      {
+        "nom": "Application de comptage de colis",
+        "description": [
+          {
+            "image": "e-scm.png"
+          },
+          {
+            "texte": "Cette application web prédit le coût de facturation en fonction du nombre de colis envoyés pour chaque client. Développée lors de mon stage de 2e année, elle utilise Angular et mySQL pour la gestion des données. Les utilisateurs peuvent créer des comptes et obtenir des estimations de coûts, facilitant ainsi la logistique."
+          },
+          {
+            "image": "ScreenShot/screenshot-escm.png",
+            "width": 700,
+            "libelle": "Screen shot de la partie de Facturation de l'application"
+          }
+        ],
+        "image": "e-scm.png",
+        "tags": ["Angular", "Java", "mySQL", "GestionDeProjet"]
+      },
+      {
+        "nom": "Catalogue de CD",
+        "description": [
+          {
+            "image": "cd.avif"
+          },
+          {
+            "texte": "Ce mini projet scolaire propose une application permettant d'ajouter et de supprimer des CD en tant qu'administrateur, ainsi que de simuler un paiement en tant que client. Ce projet m'a permis de me familiariser avec PHP et mySQL."
+          }
+        ],
+        "image": "cd.avif",
+        "tags": ["JavaScript", "PHP", "mySQL"],
+        "lienGithub": "https://github.com/SamuelCURRAN0/CatalogueCDPhp"
+      },
+      {
+        "nom": "Sauce piquante",
+        "description": [
+          {
+            "image": "hot-deal.png"
+          },
+          {
+            "texte": "Mini projet scolaire permettant de créer un compte, d'ajouter des sauces, et de liker ou disliker des sauces. Développé sous Laravel, ce projet illustre mes compétences en développement backend et en gestion de bases de données."
+          }
+        ],
+        "image": "hot-deal.png",
+        "tags": ["Laravel", "mySQL"],
+        "lienGithub": "https://github.com/SamuelCURRAN0/SaucePiquante"
+      },
+      {
+        "nom": "Serveur de Chat",
+        "description": [
+          {
+            "image": "messagerie.png"
+          },
+          {
+            "texte": "Prototype d'un serveur de chat où les utilisateurs peuvent envoyer des messages, créer et supprimer des canaux de discussion. Ce projet m'a permis de mettre en pratique mes compétences en programmation C."
+          }
+        ],
+        "image": "messagerie.png",
+        "tags": ["C"]
+      },
+      {
+        "nom": "Memory",
+        "description": [
+          {
+            "image": "memory.webp"
+          },
+          {
+            "texte": "Jeu éducatif développé sur terminal où les joueurs doivent retrouver des paires de cartes identiques. Ce projet m'a permis de développer mes compétences en C++ et d'appliquer des concepts de programmation orientée objet."
+          }
+        ],
+        "image": "memory.webp",
+        "tags": ["CPlus"]
+      }
+    ]
+    ,
+    "competences-titre": "Compétences",   
+    "competences": [
+      {
+        "nom": "FrontEnd",
+        "lstSkills": ["JavaScript", "HTML", "CSS", "Bootstrap", "TypeScript", "Angular"],
+        "color": "Red"
+      },
+      {
+        "nom": "BackEnd",
+        "lstSkills": ["PHP", "Laravel", "Java", "Node.js"],
+        "color": "Blue"
+      },
+      {
+        "nom": "Système / Performance",
+        "lstSkills": ["C", "C++"],
+        "color": "Green"
+      },
+      {
+        "nom": "Développement de jeux",
+        "lstSkills": ["Unity"],
+        "color": "Yellow"
+      },
+      {
+        "nom": "Base de données",
+        "lstSkills": ["MySQL", "MongoDB", "SQLite","PostgreSQL"],
+        "color": "Purple"
+      },
+      {
+        "nom": "DevOps et Gestion de Projet",
+        "lstSkills": ["Gestion de projet", "Git","Trello"],
+        "color": "Pink"
+      }
+    ],
+    "diplomes-titre": "Diplômes",
+    "diplomes": [
+        {
+            "nom": "BUT - IUT de Bayonne et du Pays Basque",
+            "description": "Connaissances et compétences techniques spécialisées en informatique : réseaux, bases de données (dont base du SQL), programmation par la maîtrise des langages et des outils de développement du domaine (C++ et C#, Python, etc.)",
+            "anneeDeDebut": 2022,
+            "anneeDeFin": 2025
+        },
+        {
+            "nom": "Bac STI2D - Lycée Hasparen",
+            "description": "Ce cursus m’a apporté des compétences technologiques.",
+            "anneeDeDebut": 2019,
+            "anneeDeFin": 2021
+        }
+    ],
+    "contact-titre": "Contact"
+}

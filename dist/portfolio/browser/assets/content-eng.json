@@ -1,0 +1,167 @@
+{
+  "a-propos-titre": "About",
+  "a-propos-ecole": "Computer Science student in Anglet (IUT of Bayonne and the Basque Country)",
+  "a-propos-description": "Passionate about Computer Science, I am continuously improving my programming and technical skills. Always curious and eager to learn, I take a strong interest in new technologies and innovation. Motivated and dedicated, I aim to apply my knowledge to real-world projects and actively contribute to the digital world of tomorrow.",
+  "projets-titre": "Projects",
+  "projets": [
+    {
+      "nom": "AlgoForge",
+      "description": [
+        {
+          "image": "AlgoForge.png",
+          "invertImage": true
+        },
+        {
+          "texte": "AlgoForge is an innovative tool that replaces TabulaRasa, an algorithm editing platform, by integrating an anomaly detection feature. The application helps users identify and fix errors in their algorithms efficiently. Developed during my studies at the IUT of Bayonne and the Basque Country, this project was a great opportunity to strengthen my programming skills. TabulaRasa, the former project, was replaced by AlgoForge to offer a better user experience."
+        },
+        {
+          "image": "ScreenShot/screenshot-AlgoForge1.png",
+          "width": 700,
+          "libelle": "Screenshot of the AlgoForge application"
+        }
+      ],
+      "image": "AlgoForge.png",
+      "invertImage": true,
+      "tags": ["JavaScript", "ProjectManagement"],
+      "lienGithub": "https://github.com/Bing-Chill-inc/Algoforge",
+      "lienSiteWeb": "https://www.algoforge.fr/"
+    },
+    {
+      "nom": "EcoFloc4Win",
+      "description": [
+        {
+          "image": "EcoFloc4Win.png",
+          "invertImage": false
+        },
+        {
+          "texte": "EcoFloc4Win is a Windows application developed during my third year at the IUT of Bayonne. It measures real-time power consumption and provides accurate analytics to optimize energy efficiency. This project allowed me to combine skills in algorithm design, user interface development, and data analysis in a professional context."
+        }
+      ],
+      "image": "EcoFloc4Win.png",
+      "invertImage": false,
+      "tags": ["CPlus", "JavaScript", "ProjectManagement"],
+      "lienGithub": "https://github.com/Ecofloc4win/Ecofloc4win"
+    },
+    {
+      "nom": "Package Counting App",
+      "description": [
+        {
+          "image": "e-scm.png"
+        },
+        {
+          "texte": "This web application estimates billing costs based on the number of packages shipped per client. Developed during my second-year internship, it uses Angular and MySQL for data management. Users can create accounts and get cost estimates, simplifying logistics."
+        },
+        {
+          "image": "ScreenShot/screenshot-escm.png",
+          "width": 700,
+          "libelle": "Screenshot of the billing section of the application"
+        }
+      ],
+      "image": "e-scm.png",
+      "tags": ["Angular", "Java", "mySQL", "ProjectManagement"]
+    },
+    {
+      "nom": "CD Catalog",
+      "description": [
+        {
+          "image": "cd.avif"
+        },
+        {
+          "texte": "This school project is a web app that lets administrators add or remove CDs, and users simulate payments. It helped me get familiar with PHP and MySQL."
+        }
+      ],
+      "image": "cd.avif",
+      "tags": ["JavaScript", "PHP", "mySQL"],
+      "lienGithub": "https://github.com/SamuelCURRAN0/CatalogueCDPhp"
+    },
+    {
+      "nom": "Spicy Sauce",
+      "description": [
+        {
+          "image": "hot-deal.png"
+        },
+        {
+          "texte": "A small school project allowing users to create accounts, add sauces, and like/dislike them. Built with Laravel, it demonstrates my backend development and database management skills."
+        }
+      ],
+      "image": "hot-deal.png",
+      "tags": ["Laravel", "mySQL"],
+      "lienGithub": "https://github.com/SamuelCURRAN0/SaucePiquante"
+    },
+    {
+      "nom": "Chat Server",
+      "description": [
+        {
+          "image": "messagerie.png"
+        },
+        {
+          "texte": "Prototype of a chat server where users can send messages, create and delete channels. This project helped me apply my C programming skills."
+        }
+      ],
+      "image": "messagerie.png",
+      "tags": ["C"]
+    },
+    {
+      "nom": "Memory Game",
+      "description": [
+        {
+          "image": "memory.webp"
+        },
+        {
+          "texte": "An educational terminal game where players match pairs of identical cards. This project allowed me to improve my C++ skills and apply object-oriented programming concepts."
+        }
+      ],
+      "image": "memory.webp",
+      "tags": ["CPlus"]
+    }
+  ],
+  "competences-titre": "Skills",
+  "competences": [
+    {
+      "nom": "FrontEnd",
+      "lstSkills": ["JavaScript", "Bootstrap", "TypeScript", "Angular","React"],
+      "color": "Red"
+    },
+    {
+      "nom": "BackEnd",
+      "lstSkills": ["PHP", "Laravel","TypeScript", "Java", "Node.js"],
+      "color": "Blue"
+    },
+    {
+      "nom": "System / Performance",
+      "lstSkills": ["C", "C++"],
+      "color": "Green"
+    },
+    {
+      "nom": "Game Development",
+      "lstSkills": ["Unity"],
+      "color": "Yellow"
+    },
+    {
+      "nom": "Database",
+      "lstSkills": ["MySQL", "MongoDB", "SQLite", "PostgreSQL"],
+      "color": "Purple"
+    },
+    {
+      "nom": "DevOps & Project Management",
+      "lstSkills": ["Agile", "Git", "Trello"],
+      "color": "Pink"
+    }
+  ],
+  "diplomes-titre": "Degrees",
+  "diplomes": [
+    {
+      "nom": "BUT - IUT of Bayonne and the Basque Country",
+      "description": "Specialized knowledge and technical skills in computer science: networks, databases (including SQL), programming through mastery of relevant languages and tools (C++ and C#, Python, etc.).",
+      "anneeDeDebut": 2022,
+      "anneeDeFin": 2025
+    },
+    {
+      "nom": "STI2D High School Diploma - Hasparren High School",
+      "description": "This program provided me with technological knowledge and skills.",
+      "anneeDeDebut": 2019,
+      "anneeDeFin": 2021
+    }
+  ],
+  "contact-titre": "Contact"
+}
