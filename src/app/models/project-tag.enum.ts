@@ -10,14 +10,14 @@ export enum ProjectTag {
     PHP = 'PHP'
 }
 
-export const statusColors = {
-    [ProjectTag.Angular]: '#ff4d4d', // Softer red
-    [ProjectTag.C]: '#4d94ff',       // Softer blue
-    [ProjectTag.CPlus]: '#9966ff',   // Softer purple
-    [ProjectTag.GestionDeProjet]: '#ffcc4d', // Softer orange
-    [ProjectTag.JavaScript]: '#ffe04d', // Softer yellow
-    [ProjectTag.Java]: '#66ff66',     // Softer green
-    [ProjectTag.Laravel]: '#ff99cc',  // Softer pink
-    [ProjectTag.mySQL]: '#cc9966',     // Softer brown
-    [ProjectTag.PHP]: '#4F5B93',       // Light blue for PHP
+export const statusColors: Record<ProjectTag, string> = {
+  [ProjectTag.Angular]: '#ff4d4d',
+  [ProjectTag.C]: '#4d94ff',
+  [ProjectTag.CPlus]: '#9966ff',
+  [ProjectTag.GestionDeProjet]: '#ffcc4d',
+  [ProjectTag.JavaScript]: '#ffe04d',
+  [ProjectTag.Java]: '#66ff66',
+  [ProjectTag.Laravel]: '#ff99cc',
+  [ProjectTag.mySQL]: '#cc9966',
+  [ProjectTag.PHP]: '#4F5B93',
 };

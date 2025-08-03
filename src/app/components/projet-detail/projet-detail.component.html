@@ -5,8 +5,8 @@
           <!--nom du projet -->
           <div>
             <h5 class="modal-title">{{project?.nom}}</h5>
-            <ng-container *ngIf="project?.tags">
-              <span *ngFor="let tag of project?.tags" 
+            <ng-container *ngIf="project">
+              <span *ngFor="let tag of project.tags" 
               class="tag" 
               [ngStyle]="{'background-color': statusColors[tag]}">
                   {{ tag }}
