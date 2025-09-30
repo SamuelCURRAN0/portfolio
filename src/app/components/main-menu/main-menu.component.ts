@@ -3,7 +3,7 @@ import { Component, AfterViewInit, HostListener  } from '@angular/core';
 import { BoxComponent } from '../box/box.component';
 import { ButonThemeComponent } from '../buton-theme/buton-theme.component';
 import { CustomTextEffectComponent } from '../custom-text-effect/custom-text-effect.component';
-import { CustomTextShowEffectComponent } from "../custom-text-showing-effect/custom-text-show-effect/custom-text-show-effect.component";
+import { CustomTextShowEffectComponent } from "../custom-text-showing-effect/custom-text-show-effect.component";
 
 @Component({
     selector: 'app-main-menu',
