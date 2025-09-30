@@ -1,6 +1,5 @@
 import { Component, OnInit, AfterViewInit,Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { AProposComponent } from './components/a-propos/a-propos.component';
 import { CompetencesListeComponent } from './components/competences-liste/competences-liste.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { DiplomesListeComponent } from './components/diplomes-liste/diplomes-liste.component';
@@ -14,7 +13,6 @@ import * as AOS from 'aos';
     selector: 'app-root',
     standalone:true,
     imports: [
-        AProposComponent,
         CompetencesListeComponent,
         ContactComponent,
         DiplomesListeComponent,
