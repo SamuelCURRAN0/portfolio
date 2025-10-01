@@ -1,20 +1,27 @@
-import { Component, ElementRef, QueryList, ViewChildren, Renderer2, AfterViewInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  QueryList,
+  ViewChildren,
+  Renderer2,
+  AfterViewInit,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RandomNumberService } from '../../services/random-number.service'; 
+import { RandomNumberService } from '../../services/random-number.service';
 
 @Component({
-    selector: 'app-explosion',
-    imports: [CommonModule],
-    standalone: true,
-    templateUrl: './explosion.component.html',
-    styleUrls: ['./explosion.component.scss']
+  selector: 'app-explosion',
+  imports: [CommonModule],
+  standalone: true,
+  templateUrl: './explosion.component.html',
+  styleUrls: ['./explosion.component.scss'],
 })
 export class ExplosionComponent implements AfterViewInit {
   @ViewChildren('testElements') testElements!: QueryList<ElementRef>;
-  items = Array.from({ length: 100 }, (_, i) => i + 1); 
+  items = Array.from({ length: 100 }, (_, i) => i + 1);
 
   constructor(
-    private randomNumberService: RandomNumberService, 
+    private randomNumberService: RandomNumberService,
     private renderer: Renderer2
   ) {}
 
@@ -23,7 +30,6 @@ export class ExplosionComponent implements AfterViewInit {
   }
 
   public explosion(transform: TransformInfo): void {
-    console.log("explode");
 
     this.testElements.forEach((elementRef) => {
       const element = elementRef.nativeElement as HTMLElement;
@@ -33,28 +39,44 @@ export class ExplosionComponent implements AfterViewInit {
       this.renderer.removeStyle(elementEnfant, 'display');
       this.renderer.setStyle(elementEnfant, 'opacity', '1');
       this.renderer.setStyle(elementEnfant, 'transform', 'translate(0, 0)');
-      
+
       // Apply initial position
       this.renderer.setStyle(element, 'position', 'absolute');
       this.renderer.setStyle(element, 'width', `${transform.size.width}px`);
       this.renderer.setStyle(element, 'height', `${transform.size.height}px`);
       this.renderer.setStyle(element, 'top', `${transform.position.top}px`);
       this.renderer.setStyle(element, 'left', `${transform.position.left}px`);
-      this.renderer.setStyle(element, 'transform', `rotate(${transform.rotation}deg)`);
-      
+      this.renderer.setStyle(
+        element,
+        'transform',
+        `rotate(${transform.rotation}deg)`
+      );
+
       const vertical = this.randomNumberService.getRandomNumberInRange(0, 1);
       let leftValue: string, topValue: string;
       if (vertical === 1) {
-        topValue = this.randomNumberService.getRandomNumberInRange(0, 1) === 1 ? '100%' : '0%';
-        leftValue = `${this.randomNumberService.getRandomNumberInRange(0, 100)}%`;
+        topValue =
+          this.randomNumberService.getRandomNumberInRange(0, 1) === 1
+            ? '100%'
+            : '0%';
+        leftValue = `${this.randomNumberService.getRandomNumberInRange(
+          0,
+          100
+        )}%`;
       } else {
-        leftValue = this.randomNumberService.getRandomNumberInRange(0, 1) === 1 ? '100%' : '0%';
-        topValue = `${this.randomNumberService.getRandomNumberInRange(0, 100)}%`;
+        leftValue =
+          this.randomNumberService.getRandomNumberInRange(0, 1) === 1
+            ? '100%'
+            : '0%';
+        topValue = `${this.randomNumberService.getRandomNumberInRange(
+          0,
+          100
+        )}%`;
       }
-      
+
       this.renderer.setStyle(elementEnfant, 'left', leftValue);
       this.renderer.setStyle(elementEnfant, 'top', topValue);
-      
+
       // Generate a random angle and distance
       const angle = this.randomNumberService.getRandomNumberInRange(0, 360);
       const distance = this.randomNumberService.getRandomNumberInRange(50, 200);
@@ -68,8 +90,16 @@ export class ExplosionComponent implements AfterViewInit {
       elementEnfant.offsetHeight;
 
       // Animate explosion
-      this.renderer.setStyle(elementEnfant, 'transition', 'transform 0.5s ease-out, opacity 0.5s ease-out');
-      this.renderer.setStyle(elementEnfant, 'transform', `translate(${deltaX}px, ${deltaY}px)`);
+      this.renderer.setStyle(
+        elementEnfant,
+        'transition',
+        'transform 0.5s ease-out, opacity 0.5s ease-out'
+      );
+      this.renderer.setStyle(
+        elementEnfant,
+        'transform',
+        `translate(${deltaX}px, ${deltaY}px)`
+      );
       this.renderer.setStyle(elementEnfant, 'opacity', '0');
 
       // Reset for reuse
@@ -81,7 +111,7 @@ export class ExplosionComponent implements AfterViewInit {
     });
   }
 }
-  
+
 export interface TransformInfo {
   rotation: number;
   size: { width: number; height: number };

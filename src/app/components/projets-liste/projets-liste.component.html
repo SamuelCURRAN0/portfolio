@@ -1,6 +1,6 @@
 <div>
-  <h2>{{translationContentService.getContent$("projets-titre") | async}}</h2>
-  <div class="dropdown">
+  <h2>{{ translationContentService.getContent$("projets-titre") | async }}</h2>
+  <!--<div class="dropdown">
     <button
       class="btn btn-secondary dropdown-toggle mb-4"
       type="button"
@@ -21,16 +21,24 @@
         </div>
       </ng-container>
     </div>
+  </div>-->
+  <div class="filters">
+    <div class="project-list" #scrollContainer>
+      @for (project of filteredProjects(); track $index) {
+      <app-projet
+        [project]="project"
+        (click)="selectProject(project)"
+        data-bs-toggle="modal"
+        data-bs-target="#modal"
+      ></app-projet>
+      } @if(filteredProjects().length === 0){
+      <h3>Aucun projet ne correspond à votre recherche</h3>
+      }
+    </div>
+    <div class="arrows">
+      <button class="arrow-button" (mousedown)="startScroll('left')" (mouseup)="stopScroll()">&#8592;</button>
+      <button class="arrow-button" (mousedown)="startScroll('right')" (mouseup)="stopScroll()">&#8594;</button>
+    </div>
   </div>
-  <div class="project-list">
-    <app-projet
-      *ngFor="let project of filteredProjects()"
-      [project]="project"
-      (click)="selectProject(project)"
-      data-bs-toggle="modal"
-      data-bs-target="#modal"
-    ></app-projet>
-    <h3 *ngIf="filteredProjects().length === 0">Aucun projet ne correspond à votre recherche</h3>
-  </div>  
+  <!--app-projet-detail [project]="selectedProject"></app-projet-detail-->
 </div>
-<!--app-projet-detail [project]="selectedProject"></app-projet-detail-->

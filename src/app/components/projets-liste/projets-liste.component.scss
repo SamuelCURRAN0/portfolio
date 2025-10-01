@@ -1,9 +1,16 @@
 .project-list {
     display: flex;
-    flex-wrap: wrap; 
     gap: 100px; 
     justify-content: space-evenly;
-    width: 100%;
+    width: 80%;
+    margin-left: 10%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    align-items: center;
+    overflow-x: hidden;
+    height: auto;
 }
 
 .dropdown .dropdown-list {
@@ -31,4 +38,34 @@
 
 .dropdown .dropdown-list .dropdown-item:hover {
     background-color: var(--secondary-bg);
+}
+
+.arrows {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.arrow-button {
+  background-color: #000000; /* nice blue */
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(49, 49, 49, 0.2);
+}
+
+.arrow-button:hover {
+  background-color: #000000;
+  transform: scale(1.1);
+}
+
+.arrow-button:active {
+  transform: scale(0.95);
 }

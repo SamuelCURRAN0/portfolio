@@ -1,5 +1,5 @@
 import { CommonModule, AsyncPipe } from '@angular/common';
-import { Component, HostListener, Output, EventEmitter } from '@angular/core';
+import { Component, HostListener, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { Project } from '../../models/project.model'; 
 import { ProjectTag } from '../../models/project-tag.enum'; 
 import { ProjetComponent } from '../projet/projet.component';
@@ -71,5 +71,42 @@ export class ProjetsListeComponent {
     return this.projects.filter(project => 
       project.tags.some(tag => this.checkboxStates[tag])
     );
+  }
+
+
+  @ViewChild('scrollContainer') scrollContainer!: ElementRef;
+  
+  scrollLeft() {
+    this.scrollContainer.nativeElement.scrollBy({
+      left: -200, // adjust step size
+      behavior: 'smooth'
+    });
+  }
+
+  scrollRight() {
+    this.scrollContainer.nativeElement.scrollBy({
+      left: 200, // adjust step size
+      behavior: 'smooth'
+    });
+  }
+
+  scrollInterval: NodeJS.Timeout | null = null;
+  stopScroll() {
+    if (this.scrollInterval) {
+      clearInterval(this.scrollInterval);
+      this.scrollInterval = null;
+    }
+  }
+  startScroll(direction: 'left' | 'right') {
+    const step = direction === 'left' ? -30 : 30; // pixels per tick
+    if(this.scrollInterval != null)
+    {
+      this.stopScroll();
+      console.error("Scroll interval was not null");
+      return;
+    }
+    this.scrollInterval = setInterval(() => {
+      this.scrollContainer.nativeElement.scrollBy({ left: step, behavior: 'auto' });
+    }, 20);
   }
 }

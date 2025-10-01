@@ -1,17 +1,18 @@
-<section class="begin end color-black">
-  <app-main-menu></app-main-menu>
+<section class="begin space color-black">
+  <app-page><app-main-menu></app-main-menu></app-page>
 </section>
 <section class="space">
-  <app-projets-liste data-aos="fade-right" (projectSelected)="onProjectSelected($event)"></app-projets-liste>
+  <app-page><app-projets-liste data-aos="fade-right" (projectSelected)="onProjectSelected($event)"></app-projets-liste></app-page>
 </section>
 <section class="space">
-  <app-competences-liste data-aos="fade-right"></app-competences-liste>
+  <app-page><app-competences-liste data-aos="fade-right"></app-competences-liste></app-page>
 </section>
 <section class="space">
-  <app-diplomes-liste data-aos="fade-right"></app-diplomes-liste>
+  <app-page><app-diplomes-liste data-aos="fade-right"></app-diplomes-liste></app-page>
 </section>
 <section class="end space">
-  <app-contact data-aos="fade-right"></app-contact>
+  <app-page><app-contact data-aos="fade-right"></app-contact></app-page>
 </section>
 <app-projet-detail [project]="selectedProject"></app-projet-detail>
+<app-scroll-indicator [action]="buttonPressed.bind(this)"></app-scroll-indicator>
 <!--app-custom-scrollbar></app-custom-scrollbar-->
