@@ -105,4 +105,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   onTouchMove(event: TouchEvent) {
     event.preventDefault();
   }
+
+  modalClosed() {
+    this.selectedProject = null;
+  }
 }

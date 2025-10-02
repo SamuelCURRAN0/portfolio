@@ -8,10 +8,6 @@
       "nom": "AlgoForge",
       "description": [
         {
-          "image": "AlgoForge.png",
-          "invertImage": true
-        },
-        {
           "texte": "AlgoForge is an innovative tool that replaces TabulaRasa, an algorithm editing platform, by integrating an anomaly detection feature. The application helps users identify and fix errors in their algorithms efficiently. Developed during my studies at the IUT of Bayonne and the Basque Country, this project was a great opportunity to strengthen my programming skills. TabulaRasa, the former project, was replaced by AlgoForge to offer a better user experience."
         },
         {
@@ -30,10 +26,6 @@
       "nom": "EcoFloc4Win",
       "description": [
         {
-          "image": "EcoFloc4Win.png",
-          "invertImage": false
-        },
-        {
           "texte": "EcoFloc4Win is a Windows application developed during my third year at the IUT of Bayonne. It measures real-time power consumption and provides accurate analytics to optimize energy efficiency. This project allowed me to combine skills in algorithm design, user interface development, and data analysis in a professional context."
         }
       ],
@@ -45,9 +37,6 @@
     {
       "nom": "Package Counting App",
       "description": [
-        {
-          "image": "e-scm.png"
-        },
         {
           "texte": "This web application estimates billing costs based on the number of packages shipped per client. Developed during my second-year internship, it uses Angular and MySQL for data management. Users can create accounts and get cost estimates, simplifying logistics."
         },
@@ -64,9 +53,6 @@
       "nom": "CD Catalog",
       "description": [
         {
-          "image": "cd.avif"
-        },
-        {
           "texte": "This school project is a web app that lets administrators add or remove CDs, and users simulate payments. It helped me get familiar with PHP and MySQL."
         }
       ],
@@ -77,9 +63,6 @@
     {
       "nom": "Spicy Sauce",
       "description": [
-        {
-          "image": "hot-deal.png"
-        },
         {
           "texte": "A small school project allowing users to create accounts, add sauces, and like/dislike them. Built with Laravel, it demonstrates my backend development and database management skills."
         }
@@ -92,9 +75,6 @@
       "nom": "Chat Server",
       "description": [
         {
-          "image": "messagerie.png"
-        },
-        {
           "texte": "Prototype of a chat server where users can send messages, create and delete channels. This project helped me apply my C programming skills."
         }
       ],
@@ -104,9 +84,6 @@
     {
       "nom": "Memory Game",
       "description": [
-        {
-          "image": "memory.webp"
-        },
         {
           "texte": "An educational terminal game where players match pairs of identical cards. This project allowed me to improve my C++ skills and apply object-oriented programming concepts."
         }

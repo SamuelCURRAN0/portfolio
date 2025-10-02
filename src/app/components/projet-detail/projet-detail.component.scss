@@ -60,14 +60,40 @@
 }
 
 .modal-content {
-  background-color: var(--primary-bg) !important;
+  background-color: #060b12 !important;
   color: var(--text-color) !important;
 }
-
+.modal-header {
+  background: linear-gradient(135deg, #070e16, #0f1927) !important;
+  border: 0 !important;
+  padding-bottom: 75px;
+}
 .invert-image {
   filter: invert(100%);
 }
 
 #modal {
   overflow-y: auto;
+}
+
+.icon-container{
+  background: linear-gradient(135deg, #0e1821, #070e17) !important;
+  border: #2f3f4a 1px solid;
+  border-radius: 20px;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  margin: -75px auto 0 auto; 
+  //center children
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-img{
+  margin: 0 auto; 
+  width: auto; 
+  height: auto;
+  max-width: 100px;
+  max-height: 100px;
 }

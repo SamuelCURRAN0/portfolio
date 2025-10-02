@@ -21,6 +21,9 @@ export class ProjetsListeComponent {
   selectedProject: Project | null = null;
   @Output() projectSelected = new EventEmitter<Project>();
 
+  canScrollLeft = false;
+  canScrollRight = true;
+
   constructor(public translationContentService: TranslationContentService) { }
   ngOnInit() {
     this.translationContentService.getProjets$().subscribe((projects: Project[]) => {
@@ -40,7 +43,11 @@ export class ProjetsListeComponent {
       });
     });
 }
-
+updateScrollButtons(){
+    const scrollElement = this.scrollContainer.nativeElement;
+    this.canScrollLeft = scrollElement.scrollLeft > 0;
+    this.canScrollRight = scrollElement.scrollLeft + scrollElement.clientWidth < scrollElement.scrollWidth;
+}
 
   selectProject(project: Project) {
     this.selectedProject = project;
@@ -107,6 +114,7 @@ export class ProjetsListeComponent {
     }
     this.scrollInterval = setInterval(() => {
       this.scrollContainer.nativeElement.scrollBy({ left: step, behavior: 'auto' });
+      this.updateScrollButtons();
     }, 20);
   }
 }

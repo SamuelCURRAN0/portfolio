@@ -2,17 +2,17 @@
   <app-page><app-main-menu></app-main-menu></app-page>
 </section>
 <section class="space">
-  <app-page><app-projets-liste data-aos="fade-right" (projectSelected)="onProjectSelected($event)"></app-projets-liste></app-page>
+  <app-page class="normal-space"><app-projets-liste data-aos="fade-right" (projectSelected)="onProjectSelected($event)"></app-projets-liste></app-page>
 </section>
 <section class="space">
-  <app-page><app-competences-liste data-aos="fade-right"></app-competences-liste></app-page>
+  <app-page class="normal-space"><app-competences-liste data-aos="fade-right"></app-competences-liste></app-page>
 </section>
 <section class="space">
-  <app-page><app-diplomes-liste data-aos="fade-right"></app-diplomes-liste></app-page>
+  <app-page class="normal-space"><app-diplomes-liste data-aos="fade-right"></app-diplomes-liste></app-page>
 </section>
 <section class="end space">
-  <app-page><app-contact data-aos="fade-right"></app-contact></app-page>
+  <app-page class="normal-space"><app-contact data-aos="fade-right"></app-contact></app-page>
 </section>
-<app-projet-detail [project]="selectedProject"></app-projet-detail>
+<app-projet-detail [project]="selectedProject" (close)="modalClosed()"></app-projet-detail>
 <app-scroll-indicator [action]="buttonPressed.bind(this)"></app-scroll-indicator>
 <!--app-custom-scrollbar></app-custom-scrollbar-->
