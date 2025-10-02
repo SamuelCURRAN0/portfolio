@@ -1,6 +1,7 @@
 .project {
-  width: 20em;
-  height: 25em;
+  display: flex;
+  width: 7em;
+  height: 7em;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25),
@@ -13,6 +14,8 @@
   padding-right: 2em;
   cursor: pointer;
    transition: all 0.3s ease;
+     align-items: center;   /* centers vertically */
+  justify-content: center;
 }
 
 .project * {
@@ -23,7 +26,8 @@
 
 .img-container {
   position: relative; /* Needed for pseudo-element */
-  max-height: 20em;
+  height: auto;
+  width: auto;
   padding-top: 1em;
   padding-bottom: 1em;
 }
@@ -47,33 +51,19 @@
 .project:hover {
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25),
-              0 0 40px rgba(0, 200, 255, 0.233);
-  transform: scale(1.05);
+              0 0 30px rgba(0, 200, 255, 0.233);
+  transform: scale(1.02);
 }
 .project:hover > * {
   transform: translate(-10px, -10px);
   filter: drop-shadow(20px 10px 4px #000000);
 }
 
-
-
-.tags {
-  display: flex;
-  flex-wrap: wrap; 
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.tag {
-  padding: 8px 12px;
-  border-radius: 20px;
-  font-size: 14px;
-  display: inline-block;
-  white-space: nowrap;
-  transition: background-color 0.3s, transform 0.3s, font-size 0.3s;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
 .invert-image {
   filter: invert(100%);
+}
+
+img{
+  width: 4em;
+  height: auto;
 }

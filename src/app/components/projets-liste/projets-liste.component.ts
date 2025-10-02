@@ -4,11 +4,12 @@ import { Project } from '../../models/project.model';
 import { ProjectTag } from '../../models/project-tag.enum'; 
 import { ProjetComponent } from '../projet/projet.component';
 import { TranslationContentService } from '../../services/translation-content.service';
+import { ProjetDetailComponent } from "../projet-detail/projet-detail.component";
 
 @Component({
     selector: 'app-projets-liste',
     standalone: true,
-    imports: [CommonModule, ProjetComponent, AsyncPipe],
+    imports: [CommonModule, ProjetComponent, AsyncPipe, ProjetDetailComponent],
     templateUrl: './projets-liste.component.html',
     styleUrls: ['./projets-liste.component.scss'] // Corrected to 'styleUrls'
 })
@@ -19,6 +20,8 @@ export class ProjetsListeComponent {
   projectsTags: string[] = [];
   checkboxStates: { [key: string]: boolean } = {};
   selectedProject: Project | null = null;
+  cursorValue: number = 0;
+  cursorProjects: Project[] = [];
   @Output() projectSelected = new EventEmitter<Project>();
 
   constructor(public translationContentService: TranslationContentService) { }
@@ -38,13 +41,19 @@ export class ProjetsListeComponent {
       this.projectsTags.forEach(tag => {
           this.checkboxStates[tag] = true;
       });
+      this.updateCursorProject();
     });
 }
 
 
+  clickOnProject(project: Project) {
+    this.cursorValue = this.projects.indexOf(project);
+    console.log("Cursor value updated to:", this.cursorValue);
+    this.updateCursorProject();
+  }
+
   selectProject(project: Project) {
     this.selectedProject = project;
-    this.projectSelected.emit(project);
   }
 
   openModal() {
@@ -66,15 +75,28 @@ export class ProjetsListeComponent {
   toggleCheckbox(tag: string) {
     this.checkboxStates[tag] = !this.checkboxStates[tag];
   }
-
-  filteredProjects(): Project[] {
-    return this.projects.filter(project => 
-      project.tags.some(tag => this.checkboxStates[tag])
-    );
+  updateCursorProject(): void {
+    const numberOfProjectsToShow = 5;
+    const numberOfLeftProjects = Math.floor(numberOfProjectsToShow / 2);
+    const numberOfRightProjects = Math.ceil(numberOfProjectsToShow / 2);
+    this.cursorProjects = [];
+    for (let i = this.cursorValue-numberOfLeftProjects+1; i < this.cursorValue+numberOfRightProjects+1; i++) {
+      let index = i;
+      this.cursorProjects.push(this.projects[(index - 1 + this.projects.length) % this.projects.length]);
+    }
+    this.selectProject(this.projects[(this.cursorValue + this.projects.length) % this.projects.length]);
   }
 
+  incrementCursorValue() {
+    this.cursorValue++;
+    this.updateCursorProject();
+  }
+  decrementCursorValue() {
+    this.cursorValue--;
+    this.updateCursorProject();
+  }
 
-  @ViewChild('scrollContainer') scrollContainer!: ElementRef;
+  /*@ViewChild('scrollContainer') scrollContainer!: ElementRef;
   
   scrollLeft() {
     this.scrollContainer.nativeElement.scrollBy({
@@ -108,5 +130,5 @@ export class ProjetsListeComponent {
     this.scrollInterval = setInterval(() => {
       this.scrollContainer.nativeElement.scrollBy({ left: step, behavior: 'auto' });
     }, 20);
-  }
+  }*/
 }

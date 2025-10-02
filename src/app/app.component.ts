@@ -15,7 +15,6 @@ import { ContactComponent } from './components/contact/contact.component';
 import { DiplomesListeComponent } from './components/diplomes-liste/diplomes-liste.component';
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { ProjetsListeComponent } from './components/projets-liste/projets-liste.component';
-import { ProjetDetailComponent } from './components/projet-detail/projet-detail.component';
 import { Project } from './models/project.model';
 import * as AOS from 'aos';
 import { PageComponent } from './components/page/page.component';
@@ -30,7 +29,6 @@ import { ScrollIndicatorComponent } from './components/scroll-indicator/scroll-i
     DiplomesListeComponent,
     MainMenuComponent,
     ProjetsListeComponent,
-    ProjetDetailComponent,
     PageComponent,
     ScrollIndicatorComponent,
   ],
@@ -67,9 +65,11 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   moveToCurrentPage() {
-    let el = this.pages.toArray()[this.selectedPageIndex].elRef.nativeElement;
+    const pageComponent:PageComponent = this.pages.toArray()[this.selectedPageIndex];
+    let el = pageComponent.elRef.nativeElement;
     el.scrollIntoView({ behavior: 'smooth' });
     this.scrollIndicatorComponent.onResetTimer();
+    this.scrollIndicatorComponent.showOnThisPage = pageComponent.showScrollIndicatorOnThisPage;
   }
   onScrollDown() {
     if (this.selectedPageIndex < this.pages.length - 1) {

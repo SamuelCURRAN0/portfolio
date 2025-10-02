@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class ScrollIndicatorComponent {
   @Input() action!: () => void; 
-
+  @Input() showOnThisPage: boolean = true;
   private timerId: NodeJS.Timeout | null = null;
 
   private lastTime:number = 0;
@@ -16,6 +16,7 @@ export class ScrollIndicatorComponent {
   show(){
     this.showIndicator = true;
   }
+
   onResetTimer() {
     this.showIndicator = false;
     if (this.timerId) {

@@ -8,4 +8,6 @@ import { Component, ElementRef, HostListener, Input } from '@angular/core';
 export class PageComponent {
 
   constructor(public elRef: ElementRef) {}
+
+  @Input() showScrollIndicatorOnThisPage: boolean = true;
 }
