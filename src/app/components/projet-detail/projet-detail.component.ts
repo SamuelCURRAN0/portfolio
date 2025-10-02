@@ -2,11 +2,12 @@ import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@
 import { Project } from '../../models/project.model';
 import { CommonModule } from '@angular/common';
 import { statusColors } from '../../models/project-tag.enum';
+import { CustomTextShowEffectComponent } from "../custom-text-showing-effect/custom-text-show-effect.component";
 
 @Component({
   selector: 'app-projet-detail',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CustomTextShowEffectComponent],
   templateUrl: './projet-detail.component.html',
   styleUrl: './projet-detail.component.scss',
 })

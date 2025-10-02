@@ -56,12 +56,6 @@ body {
   //background-color: var(--primary-bg) !important;
   color: var(--text-color) !important;
 }
-/*h2::before {
-    content: "~ ";
-}
-h2::after {
-    content: " ~";
-}*/
 body::-webkit-scrollbar {
   display: none;
 }
@@ -118,4 +112,9 @@ body {
   padding-bottom: 2vh;
   padding-left: 5vw;
   padding-right: 5vw;
+}
+
+.modal-title p {
+    margin-bottom: 10px;
+  font-size: 2rem !important;
 }

@@ -80,6 +80,15 @@ updateScrollButtons(){
     );
   }
 
+  @HostListener('wheel', ['$event'])
+  onWheel(event: WheelEvent) {
+    if (!this.scrollContainer.nativeElement) return;
+    event.preventDefault();
+
+    // Move horizontally instead of vertically
+        this.scrollContainer.nativeElement.scrollBy({ left: event.deltaY, behavior: 'auto' });
+        this.updateScrollButtons();
+  }
 
   @ViewChild('scrollContainer') scrollContainer!: ElementRef;
   

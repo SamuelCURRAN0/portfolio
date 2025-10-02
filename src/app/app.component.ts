@@ -20,6 +20,7 @@ import { Project } from './models/project.model';
 import * as AOS from 'aos';
 import { PageComponent } from './components/page/page.component';
 import { ScrollIndicatorComponent } from './components/scroll-indicator/scroll-indicator.component';
+import { Routing } from './models/routing.enum';
 
 @Component({
   selector: 'app-root',
@@ -38,7 +39,8 @@ import { ScrollIndicatorComponent } from './components/scroll-indicator/scroll-i
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit, AfterViewInit {
-  @ViewChild(ScrollIndicatorComponent) scrollIndicatorComponent!: ScrollIndicatorComponent;
+  @ViewChild(ScrollIndicatorComponent)
+  scrollIndicatorComponent!: ScrollIndicatorComponent;
   selectedProject: Project | null = null;
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
   title = 'portfolio';
@@ -85,9 +87,14 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
   private throttleDelay = 1000;
   private scrollLocked = false;
+
   @HostListener('wheel', ['$event'])
   onWheel(event: WheelEvent) {
-    if(this.selectedProject) return;
+    if (this.selectedProject) return;
+    if ((event.target as HTMLElement).closest('.filters')) {
+      // If wheel happened inside a carousel, ignore it here
+      return;
+    }
     event.preventDefault();
     event.stopPropagation();
     if (this.scrollLocked) return;
@@ -97,16 +104,48 @@ export class AppComponent implements OnInit, AfterViewInit {
     } else if (event.deltaY < 0) {
       this.onScrollUp();
     }
-    setTimeout(() => this.scrollLocked = false, this.throttleDelay);
+    setTimeout(() => (this.scrollLocked = false), this.throttleDelay);
   }
 
-  // Prevent touch scroll on the host element (mobile)
+  private lastTouchY: number | null = null;
+
+
   @HostListener('touchmove', ['$event'])
   onTouchMove(event: TouchEvent) {
+    if (this.selectedProject) return;
     event.preventDefault();
+    event.stopPropagation();
+    if (this.scrollLocked) return;
+    this.scrollLocked = true;
+
+    // Detect scroll direction
+    if (event.touches && event.touches.length) {
+      const touch = event.touches[0];
+
+      if (!this.lastTouchY) {
+        this.lastTouchY = touch.clientY;
+      } else {
+        const deltaY = this.lastTouchY - touch.clientY;
+
+        if (deltaY > 0) {
+          this.onScrollDown();
+        } else if (deltaY < 0) {
+          this.onScrollUp();
+        }
+
+        this.lastTouchY = touch.clientY;
+      }
+    }
+
+    setTimeout(() => (this.scrollLocked = false), this.throttleDelay);
   }
 
   modalClosed() {
     this.selectedProject = null;
+  }
+
+  navigateTo(section: Routing) {
+    this.selectedPageIndex = section;
+    this.moveToCurrentPage();
   }
 }

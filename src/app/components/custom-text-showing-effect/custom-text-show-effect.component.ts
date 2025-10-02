@@ -1,33 +1,44 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-custom-text-show-effect',
-  imports: [],
   templateUrl: './custom-text-show-effect.component.html',
-  styleUrls: ['./custom-text-show-effect.component.scss']
+  styleUrls: ['./custom-text-show-effect.component.scss'],
 })
-export class CustomTextShowEffectComponent {
+export class CustomTextShowEffectComponent implements OnChanges {
   @Input() message!: string;
+  @Input() speed: number = 200;
+
   currentMessage: string = '';
   isAnimationComplete: boolean = false;
-  ngOnInit(): void {
-    this.showMessage();
+  private typingInterval: any;
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['message'] && changes['message'].currentValue) {
+      this.showMessage();
+    }
   }
 
   private showMessage(): void {
+    // Clear any running interval if message changes mid-animation
+    if (this.typingInterval) {
+      clearInterval(this.typingInterval);
+    }
+
     this.isAnimationComplete = false;
     this.currentMessage = '';
+
     const messageArray = this.message.split('');
     let index = 0;
 
-    const interval = setInterval(() => {
+    this.typingInterval = setInterval(() => {
       if (index < messageArray.length) {
         this.currentMessage += messageArray[index];
         index++;
       } else {
-        clearInterval(interval);
+        clearInterval(this.typingInterval);
         this.isAnimationComplete = true;
       }
-    }, 200);
+    }, this.speed);
   }
 }

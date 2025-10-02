@@ -1,6 +1,6 @@
 {
-  "a-propos-titre": "About",
-  "a-propos-ecole": "Computer Science student in Anglet (IUT of Bayonne and the Basque Country)",
+  "a-propos-titre": "Hi, my name is",
+  "a-propos-role": "Developer",
   "a-propos-description": "Passionate about Computer Science, I am continuously improving my programming and technical skills. Always curious and eager to learn, I take a strong interest in new technologies and innovation. Motivated and dedicated, I aim to apply my knowledge to real-world projects and actively contribute to the digital world of tomorrow.",
   "projets-titre": "Projects",
   "projets": [
@@ -20,7 +20,7 @@
       "invertImage": true,
       "tags": ["JavaScript", "ProjectManagement"],
       "lienGithub": "https://github.com/Bing-Chill-inc/Algoforge",
-      "lienSiteWeb": "https://www.algoforge.fr/"
+      "lienSiteWeb": "https://algoforge.fr/edit/"
     },
     {
       "nom": "EcoFloc4Win",

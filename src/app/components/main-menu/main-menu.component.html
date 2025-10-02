@@ -1,16 +1,39 @@
 <div class="main-menu">
-    <div class="wrapper">
-        <div class="texte">
-            <app-custom-text-show-effect class="green-color" message="Hi, my name is"></app-custom-text-show-effect>
-            <app-custom-text-effect [message]="'Samuel Curran'" class="name grey-scale-1-color"></app-custom-text-effect>
-            <p class="portfolio grey-scale-2-color">Developer</p>
-            <p class="grey-scale-3-color">Passionate about Computer Science, I am continuously improving my programming and technical skills.<br> Always curious and eager to learn, I take a strong interest in new technologies and innovation. Motivated and dedicated, I aim to apply my knowledge to real-world projects and actively contribute to the digital world of tomorrow.</p>
-        </div>      
-        <div class="right-menu">
-            <!--<app-buton-theme></app-buton-theme> 
-            <button id="lang">Fr<i class="fas fa-chevron-down"></i></button>-->
-        </div>
-        
-        @for (number of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; track number) { <app-box></app-box> }
+  <div class="header">
+    <button (click)="scrollTo.emit(Routing.Projets)">
+      {{ translationContentService.getContent$("projets-titre") | async }}
+    </button>
+    <button (click)="scrollTo.emit(Routing.Competences)">
+      {{ translationContentService.getContent$("competences-titre") | async }}
+    </button>
+    <button (click)="scrollTo.emit(Routing.Diplomes)">
+      {{ translationContentService.getContent$("diplomes-titre") | async }}
+    </button>
+    <button (click)="scrollTo.emit(Routing.Contact)">
+      {{ translationContentService.getContent$("contact-titre") | async }}
+    </button>
+  </div>
+  <div class="wrapper">
+    <div class="texte">
+      <app-custom-text-show-effect
+        class="green-color"
+        message="{{ translationContentService.getContent$('a-propos-titre') | async }}"
+      ></app-custom-text-show-effect>
+      <app-custom-text-effect
+        [message]="'Samuel Curran'"
+        class="name grey-scale-1-color"
+      ></app-custom-text-effect>
+      <p class="portfolio grey-scale-2-color">{{ translationContentService.getContent$('a-propos-role') | async }}</p>
+      <p class="grey-scale-3-color">
+        {{ translationContentService.getContent$('a-propos-description') | async }}
+      </p>
     </div>
+    <div class="right-menu">
+      <!--<app-buton-theme></app-buton-theme> 
+            <button id="lang">Fr<i class="fas fa-chevron-down"></i></button>-->
+    </div>
+
+    @for (number of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; track number) {
+    <app-box></app-box> }
+  </div>
 </div>

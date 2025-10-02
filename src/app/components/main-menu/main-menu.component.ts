@@ -1,29 +1,31 @@
 import { CommonModule } from '@angular/common';
-import { Component, AfterViewInit, HostListener  } from '@angular/core';
+import { Component, AfterViewInit, Output, EventEmitter } from '@angular/core';
 import { BoxComponent } from '../box/box.component';
-import { ButonThemeComponent } from '../buton-theme/buton-theme.component';
 import { CustomTextEffectComponent } from '../custom-text-effect/custom-text-effect.component';
-import { CustomTextShowEffectComponent } from "../custom-text-showing-effect/custom-text-show-effect.component";
+import { CustomTextShowEffectComponent } from '../custom-text-showing-effect/custom-text-show-effect.component';
+import { TranslationContentService } from '../../services/translation-content.service';
+import { Routing } from '../../models/routing.enum';
 
 @Component({
-    selector: 'app-main-menu',
-    standalone: true,
-    imports: [
+  selector: 'app-main-menu',
+  standalone: true,
+  imports: [
     CommonModule,
     BoxComponent,
     CustomTextEffectComponent,
     CustomTextShowEffectComponent,
-],
-    templateUrl: './main-menu.component.html',
-    styleUrls: ['./main-menu.component.scss'] // Corriger `styleUrl` en `styleUrls`
+  ],
+  templateUrl: './main-menu.component.html',
+  styleUrls: ['./main-menu.component.scss'], // Corriger `styleUrl` en `styleUrls`
 })
 export class MainMenuComponent implements AfterViewInit {
-  moveBoxes !: NodeListOf<Element>;
-  constructor() { }
+  @Output() scrollTo = new EventEmitter<Routing>();
+  Routing = Routing;
+  moveBoxes!: NodeListOf<Element>;
+  constructor(public translationContentService: TranslationContentService) { }
   private mouseInterval: any;
   mouseX = 0;
   mouseY = 0;
 
-  ngAfterViewInit(): void {
-  }
+  ngAfterViewInit(): void {}
 }
