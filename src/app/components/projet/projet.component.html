@@ -1,13 +1,24 @@
-<div class="project">
-    <div class="img-container">
-        <img [src]="'assets/images/' + project.image" [ngClass]="{'invert-image': project.invertImage}" alt="{{ project.nom }}" />
-    </div>
-    <h3>{{ project.nom }}</h3>
-    <div class="tags">
-        <span *ngFor="let tag of project.tags" 
-        class="tag" 
-        [ngStyle]="{'background-color': statusColors[tag]}">
-            {{ tag }}
-        </span>
-    </div>
+<div
+  class="project"
+  [ngStyle]="{
+    background: project.customBgColor || 'rgba(255, 255, 255, 0.03)'
+  }"
+>
+  <div class="img-container">
+    <img
+      [src]="'assets/images/' + project.image"
+      [ngClass]="{ 'invert-image': project.invertImage }"
+      alt="{{ project.nom }}"
+    />
+  </div>
+  <h3>{{ project.nom }}</h3>
+  <div class="tags">
+    <span
+      *ngFor="let tag of project.tags"
+      class="tag"
+      [ngStyle]="{ 'background-color': statusColors[tag] }"
+    >
+      {{ tag }}
+    </span>
+  </div>
 </div>

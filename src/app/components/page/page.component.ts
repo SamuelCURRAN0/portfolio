@@ -6,6 +6,7 @@ import { Component, ElementRef, HostListener, Input } from '@angular/core';
   styleUrl: './page.component.scss',
 })
 export class PageComponent {
-
+  @Input() customPrimaryBgColor: string | null = null;
+  @Input() customSecondaryBgColor: string | null = null;
   constructor(public elRef: ElementRef) {}
 }

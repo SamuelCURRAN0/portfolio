@@ -7,6 +7,7 @@ export class Project {
         public tags: ProjectTag[] ,
         public invertImage?: boolean,
         public lienGithub?: string,
-        public lienSiteWeb?: string
+        public lienSiteWeb?: string,
+        public customBgColor?: string
     ) {}
 }

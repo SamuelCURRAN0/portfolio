@@ -70,8 +70,10 @@
     font-size: 16px;
 }
 .box-border{
-    border: 1px solid rgba(255, 255, 255, 0.062);
+    border: 1px solid #0f171f;
     border-radius: 10px;
     padding: 10px;
     min-height: 100px;
+    max-width: 700px;
+    background: linear-gradient(135deg, #09121d, #091118);
 }

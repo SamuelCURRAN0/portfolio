@@ -24,7 +24,6 @@ h2 {
   margin-top: 4em;
   font-size: 24px;
   margin-bottom: 20px;
-  //underline
   position: relative;
   display: inline-block;
 }
@@ -32,19 +31,15 @@ h2::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -10px; /* adjust distance under text */
-  width: 70px; /* same length as text */
-  height: 4px; /* max thickness */
-  //background: linear-gradient(to right, #00768d 0%, transparent 100%);
+  bottom: -10px;
+  width: 70px;
+  height: 4px;
   background: linear-gradient(
     to right,
     #00768d 0%,
-    /* solid color start */ #017e97 20%,
-    /* solid color end */ rgba(0, 118, 141, 0) 100% /* fade to transparent */
+    #017e97 20%,
+    rgba(0, 118, 141, 0) 100% 
   );
-  //background: #0056b3;
-  /* Make it taper */
-  //clip-path: polygon(0 0, 100% 50%, 0 100%);
   clip-path: polygon(0 0, 40% 0, 100% 30%, 100% 70%, 40% 100%, 0 100%);
 }
 h5{
@@ -52,7 +47,7 @@ h5{
     padding-bottom: 10px;
 }
 body {
-  background: linear-gradient(135deg, #0c0f13, #1a1d22);
+  background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
   //background-color: var(--primary-bg) !important;
   color: var(--text-color) !important;
 }
@@ -117,4 +112,8 @@ body {
 .modal-title p {
     margin-bottom: 10px;
   font-size: 2rem !important;
+}
+
+h2 + * {
+  margin-top: 5em !important; /* pushes the next element down */
 }

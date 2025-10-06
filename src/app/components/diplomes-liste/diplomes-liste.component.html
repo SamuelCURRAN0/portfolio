@@ -1,24 +1,23 @@
-<h2>{{translationContentService.getContent$("diplomes-titre") | async}}</h2>
+<h2>{{ translationContentService.getContent$("diplomes-titre") | async }}</h2>
 
 <div class="container">
-    <ul>
-        <ng-container *ngFor="let diplome of diplomes">
-            <li  class="box-border">
-                <span></span>
-                <div class="title">{{diplome.nom}}
-                </div>
-                <div class="info">
-                    {{diplome.description}}
-                </div>
-                <div class="time">
-                    <span>
-                        {{diplome.anneeDeFin}}
-                    </span>
-                    <span>
-                        {{diplome.anneeDeDebut}}
-                    </span>
-                </div>
-            </li>
-        </ng-container>
-    </ul>
+  <ul>
+    @for (diplome of diplomes; track $index) {
+    <li class="box-border">
+      <span></span>
+      <div class="title">{{ diplome.nom }}</div>
+      <div class="info">
+        {{ diplome.description }}
+      </div>
+      <div class="time">
+        <span>
+          {{ diplome.anneeDeFin }}
+        </span>
+        <span>
+          {{ diplome.anneeDeDebut }}
+        </span>
+      </div>
+    </li>
+    }
+  </ul>
 </div>

@@ -86,7 +86,7 @@ updateScrollButtons(){
     event.preventDefault();
 
     // Move horizontally instead of vertically
-        this.scrollContainer.nativeElement.scrollBy({ left: event.deltaY, behavior: 'auto' });
+        this.scrollContainer.nativeElement.scrollBy({ left: event.deltaY+event.deltaX, behavior: 'auto' });
         this.updateScrollButtons();
   }
 

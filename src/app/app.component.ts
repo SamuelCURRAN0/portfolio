@@ -44,6 +44,10 @@ export class AppComponent implements OnInit, AfterViewInit {
   selectedProject: Project | null = null;
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
   title = 'portfolio';
+  private defaultPrimaryBg = '#0c0f13';
+  private defaultSecondaryBg = '#1a1d22';
+  private currentPrimaryBg = this.defaultPrimaryBg;
+  private currentSecondaryBg = this.defaultSecondaryBg;
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       AOS.init({ once: true, duration: 1000 });
@@ -68,10 +72,59 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.onScrollDown();
   }
 
+  switchBgColor(
+    currentColor: string,
+    propertyName: string,
+    newColor: string,
+    duration: number = 800,
+    steps: number = 30
+  ) {
+    if (newColor === currentColor) return;
+    const startColor = currentColor;
+    const endColor = newColor;
+    let step = 0;
+
+    const intervalTime = duration / steps;
+
+    const interval = setInterval(() => {
+      step++;
+      const factor = step / steps;
+      const currentColor = this.interpolateColor(startColor, endColor, factor);
+
+      document.documentElement.style.setProperty(propertyName, currentColor);
+
+      if (step >= steps) {
+        clearInterval(interval);
+        if (propertyName === '--secondary-bg') this.currentSecondaryBg = endColor;
+        if (propertyName === '--primary-bg') this.currentPrimaryBg = endColor;
+      }
+    }, intervalTime);
+  }
+
   moveToCurrentPage() {
     let el = this.pages.toArray()[this.selectedPageIndex].elRef.nativeElement;
     el.scrollIntoView({ behavior: 'smooth' });
     this.scrollIndicatorComponent.onResetTimer();
+    const cp =
+      this.pages.toArray()[this.selectedPageIndex].customPrimaryBgColor;
+    const primaryColor = cp ? cp : this.defaultPrimaryBg;
+    this.switchBgColor(
+      this.currentPrimaryBg,
+      '--primary-bg',
+      primaryColor,
+      1000,
+      60
+    );
+    const cs =
+      this.pages.toArray()[this.selectedPageIndex].customSecondaryBgColor;
+    const secondaryColors = cs ? cs : this.defaultSecondaryBg;
+    this.switchBgColor(
+      this.currentSecondaryBg,
+      '--secondary-bg',
+      secondaryColors,
+      1000,
+      60
+    );
   }
   onScrollDown() {
     if (this.selectedPageIndex < this.pages.length - 1) {
@@ -108,7 +161,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   private lastTouchY: number | null = null;
-
 
   @HostListener('touchmove', ['$event'])
   onTouchMove(event: TouchEvent) {
@@ -147,5 +199,30 @@ export class AppComponent implements OnInit, AfterViewInit {
   navigateTo(section: Routing) {
     this.selectedPageIndex = section;
     this.moveToCurrentPage();
+  }
+
+  private hexToRgb(hex: string): [number, number, number] {
+    hex = hex.replace(/^#/, '');
+    if (hex.length === 3) {
+      hex = hex
+        .split('')
+        .map((x) => x + x)
+        .join('');
+    }
+    const num = parseInt(hex, 16);
+    return [(num >> 16) & 255, (num >> 8) & 255, num & 255];
+  }
+
+  private rgbToHex(r: number, g: number, b: number): string {
+    return `#${[r, g, b].map((x) => x.toString(16).padStart(2, '0')).join('')}`;
+  }
+
+  private interpolateColor(from: string, to: string, factor: number): string {
+    const [r1, g1, b1] = this.hexToRgb(from);
+    const [r2, g2, b2] = this.hexToRgb(to);
+    const r = Math.round(r1 + factor * (r2 - r1));
+    const g = Math.round(g1 + factor * (g2 - g1));
+    const b = Math.round(b1 + factor * (b2 - b1));
+    return this.rgbToHex(r, g, b);
   }
 }
