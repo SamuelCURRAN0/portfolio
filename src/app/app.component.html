@@ -1,5 +1,5 @@
 <section class="begin space color-black">
-  <app-page><app-main-menu (scrollTo)="navigateTo($event)"></app-main-menu></app-page>
+  <app-page [showNavBar]="false"><app-main-menu (scrollTo)="navigateTo($event)"></app-main-menu></app-page>
 </section>
 <section class="space">
   <app-page class="normal-space"><app-projets-liste data-aos="fade-right" (projectSelected)="onProjectSelected($event)"></app-projets-liste></app-page>
@@ -11,8 +11,11 @@
   <app-page class="normal-space" [customPrimaryBgColor]="'#030a0e'" [customSecondaryBgColor]="'#0a0e15'"><app-diplomes-liste data-aos="fade-right"></app-diplomes-liste></app-page>
 </section>
 <section class="end space">
-  <app-page class="normal-space"><app-contact data-aos="fade-right"></app-contact></app-page>
+  <app-page class="normal-space" [showScrollIndicator]="false"><app-contact data-aos="fade-right"></app-contact></app-page>
 </section>
 <app-projet-detail [project]="selectedProject" (close)="modalClosed()"></app-projet-detail>
-<app-scroll-indicator [action]="buttonPressed.bind(this)"></app-scroll-indicator>
+<app-scroll-indicator [action]="buttonPressed.bind(this)" [disableIndicator]="disabledIndicator"></app-scroll-indicator>
+@if (showNavBar) {
+  <app-navigation-bar (scrollTo)="navigateTo($event)"></app-navigation-bar>
+}
 <!--app-custom-scrollbar></app-custom-scrollbar-->

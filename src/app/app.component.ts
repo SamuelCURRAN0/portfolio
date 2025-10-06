@@ -21,6 +21,7 @@ import * as AOS from 'aos';
 import { PageComponent } from './components/page/page.component';
 import { ScrollIndicatorComponent } from './components/scroll-indicator/scroll-indicator.component';
 import { Routing } from './models/routing.enum';
+import { NavigationBarComponent } from "./components/navigation-bar/navigation-bar.component";
 
 @Component({
   selector: 'app-root',
@@ -34,7 +35,8 @@ import { Routing } from './models/routing.enum';
     ProjetDetailComponent,
     PageComponent,
     ScrollIndicatorComponent,
-  ],
+    NavigationBarComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -48,6 +50,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   private defaultSecondaryBg = '#1a1d22';
   private currentPrimaryBg = this.defaultPrimaryBg;
   private currentSecondaryBg = this.defaultSecondaryBg;
+  disabledIndicator = false;
+  showNavBar = true;
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       AOS.init({ once: true, duration: 1000 });
@@ -103,6 +107,8 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   moveToCurrentPage() {
     let el = this.pages.toArray()[this.selectedPageIndex].elRef.nativeElement;
+    this.disabledIndicator = !this.pages.toArray()[this.selectedPageIndex].showScrollIndicator;
+    this.showNavBar = this.pages.toArray()[this.selectedPageIndex].showNavBar;
     el.scrollIntoView({ behavior: 'smooth' });
     this.scrollIndicatorComponent.onResetTimer();
     const cp =

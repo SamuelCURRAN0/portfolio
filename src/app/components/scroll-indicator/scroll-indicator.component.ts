@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class ScrollIndicatorComponent {
   @Input() action!: () => void; 
-
+  @Input() disableIndicator: boolean = false;
   private timerId: NodeJS.Timeout | null = null;
 
   private lastTime:number = 0;

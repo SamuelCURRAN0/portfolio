@@ -1,0 +1,49 @@
+:host {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 60px;
+    background: #1a1a1a;
+    border-radius: 10px 0 0 10px;
+    box-shadow: 0 0 15px rgba(0, 195, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    transition: width 0.3s ease;
+    overflow: hidden;
+    z-index: 1000;
+    
+}
+:host(:hover) {
+    width: 200px;
+}
+
+:host * {
+    display: none;
+}
+
+:host(:hover) * {
+    display: block;
+}
+
+button {
+    background: none;
+    border: none;
+    color: #e0e0e0;
+    font-size: 16px;
+    font-weight: 500;
+    width: 100%;
+    padding: 12px 0;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    border-radius: 8px;
+}
+
+button:hover {
+    background: #333;
+    color: #00bcd4;
+}
