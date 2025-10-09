@@ -1,5 +1,19 @@
-<button (click)="scrollTo.emit(Routing.Home)">Home</button>
-<button (click)="scrollTo.emit(Routing.Projets)">{{ translationContentService.getContent$("projets-titre") | async }}</button>
-<button (click)="scrollTo.emit(Routing.Competences)">{{ translationContentService.getContent$("competences-titre") | async }}</button>
-<button (click)="scrollTo.emit(Routing.Diplomes)">{{ translationContentService.getContent$("diplomes-titre") | async }}</button>
-<button (click)="scrollTo.emit(Routing.Contact)">{{ translationContentService.getContent$("contact-titre") | async }}</button>
+@if (showNavBar) {
+<div class="navigation-bar">
+  <button (click)="scrollTo.emit(Routing.Home)">
+    {{ translationContentService.getContent$("home") | async }}
+  </button>
+  <button (click)="scrollTo.emit(Routing.Projets)">
+    {{ translationContentService.getContent$("projets-titre") | async }}
+  </button>
+  <button (click)="scrollTo.emit(Routing.Competences)">
+    {{ translationContentService.getContent$("competences-titre") | async }}
+  </button>
+  <button (click)="scrollTo.emit(Routing.Diplomes)">
+    {{ translationContentService.getContent$("diplomes-titre") | async }}
+  </button>
+  <button (click)="scrollTo.emit(Routing.Contact)">
+    {{ translationContentService.getContent$("contact-titre") | async }}
+  </button>
+</div>
+}

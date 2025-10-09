@@ -15,7 +15,5 @@
 </section>
 <app-projet-detail [project]="selectedProject" (close)="modalClosed()"></app-projet-detail>
 <app-scroll-indicator [action]="buttonPressed.bind(this)" [disableIndicator]="disabledIndicator"></app-scroll-indicator>
-@if (showNavBar) {
-  <app-navigation-bar (scrollTo)="navigateTo($event)"></app-navigation-bar>
-}
+<app-navigation-bar [showNavBar]="showNavBar" (scrollTo)="navigateTo($event)"></app-navigation-bar>
 <!--app-custom-scrollbar></app-custom-scrollbar-->

@@ -1,4 +1,4 @@
-:host {
+.navigation-bar {
     position: fixed;
     top: 50%;
     right: 0;
@@ -17,15 +17,15 @@
     z-index: 1000;
     
 }
-:host(:hover) {
+.navigation-bar:hover {
     width: 200px;
 }
 
-:host * {
+.navigation-bar * {
     display: none;
 }
 
-:host(:hover) * {
+.navigation-bar:hover * {
     display: block;
 }
 

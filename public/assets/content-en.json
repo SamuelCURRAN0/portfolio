@@ -1,4 +1,5 @@
 {
+  "home": "Home",
   "a-propos-titre": "Hi, my name is",
   "a-propos-role": "Developer",
   "a-propos-description": "Passionate about Computer Science, I am continuously improving my programming and technical skills. Always curious and eager to learn, I take a strong interest in new technologies and innovation. Motivated and dedicated, I aim to apply my knowledge to real-world projects and actively contribute to the digital world of tomorrow.",
@@ -146,5 +147,6 @@
       "anneeDeFin": 2021
     }
   ],
-  "contact-titre": "Contact"
+  "contact-titre": "Contact",
+  "download-CV": "Download CV"
 }

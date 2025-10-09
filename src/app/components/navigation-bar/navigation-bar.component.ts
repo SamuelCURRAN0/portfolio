@@ -10,6 +10,7 @@ import { Routing } from '../../models/routing.enum';
   styleUrl: './navigation-bar.component.scss',
 })
 export class NavigationBarComponent {
+  @Input() showNavBar: boolean = true;
   Routing = Routing;
   @Output() scrollTo = new EventEmitter<Routing>();
   constructor(public translationContentService: TranslationContentService) {}

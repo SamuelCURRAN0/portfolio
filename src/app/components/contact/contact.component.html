@@ -7,7 +7,7 @@
   <a href="assets/Samuel Curran CV.pdf" download>
     <div id="CV" class="cv-container">
       <img src="assets/images/CV.jpg" alt="CV Image" />
-      <span class="cv-tooltip">Download CV</span>
+      <span class="cv-tooltip">{{ translationContentService.getContent$("download-CV") | async }}</span>
     </div>
   </a>
   <div id="contact-info">

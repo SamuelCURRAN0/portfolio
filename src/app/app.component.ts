@@ -51,7 +51,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   private currentPrimaryBg = this.defaultPrimaryBg;
   private currentSecondaryBg = this.defaultSecondaryBg;
   disabledIndicator = false;
-  showNavBar = true;
+  showNavBar = false;
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       AOS.init({ once: true, duration: 1000 });
