@@ -1,7 +1,33 @@
-img {
-  margin: 0 auto; 
-  width: auto; 
+.image-loader {
+  position: relative;
+  display: inline-block;
+  /* ensure container shrinks to image size when appropriate */
+}
+
+.image-loader img {
+  margin: 0 auto;
+  display: block;
+  width: auto;
   height: auto;
   max-width: 100px;
   max-height: 100px;
+}
+
+:host {
+  display: inline-block;
+}
+.spark {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgb(255, 255, 155);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgb(255, 255, 155);
+  animation: spark-fade 0.1s forwards;
+  z-index: 10;
+}
+
+@keyframes spark-fade {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(1px) scale(0.5); }
 }

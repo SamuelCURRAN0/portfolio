@@ -27,12 +27,7 @@
       </div>
       @if (project?.image) {
       <div class="icon-container">
-        <img
-          [src]="'assets/images/' + project?.image"
-          alt="Image du projet"
-          class="modal-image icon-img"
-          [ngClass]="{ 'invert-image': project?.invertImage }"
-        />
+        <app-image-loader [ngClass]="{ 'invert-image': project?.invertImage }" [imageSrc]="'assets/images/' + project?.image"></app-image-loader>
       </div>
       }
       <div class="modal-body">

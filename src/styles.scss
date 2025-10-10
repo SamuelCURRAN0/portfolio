@@ -117,3 +117,7 @@ body {
 h2 + * {
   margin-top: 5em !important; /* pushes the next element down */
 }
+
+img.invert-image, .invert-image img {
+  filter: invert(100%);
+}

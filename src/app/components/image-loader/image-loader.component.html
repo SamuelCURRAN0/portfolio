@@ -1,4 +1,18 @@
 <div class="image-loader">
-    <img [src]="imageSrc" class="polygon-mask" alt="Loading..."  [style.clip-path]="clipPath"
-  [style.webkitClipPath]="clipPath"/>
+  <img
+    [src]="imageSrc"
+    class="polygon-mask"
+    alt="Loading..."
+    [style.clip-path]="clipPath"
+    [style.webkitClipPath]="clipPath"
+  />
+  @for (spark of sparks; track $index) {
+    @if (spark.active) {
+    <div
+      class="spark"
+      [style.left.%]="spark.x"
+      [style.top.%]="spark.y"
+    ></div>
+    }
+  }
 </div>
