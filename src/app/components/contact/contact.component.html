@@ -4,7 +4,7 @@
   </h2>
 </div>
 <div class="contact-container">
-  <a href="assets/Samuel Curran CV.pdf" download>
+  <a href="assets/{{ translationContentService.getContent$('cv-pdf') | async }}" download>
     <div id="CV" class="cv-container">
       <img src="assets/images/CV.jpg" alt="CV Image" />
       <span class="cv-tooltip">{{ translationContentService.getContent$("download-CV") | async }}</span>
