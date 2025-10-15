@@ -8,6 +8,7 @@ import {
   QueryList,
   HostListener,
   ViewChild,
+  NgZone,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { CompetencesListeComponent } from './components/competences-liste/competences-liste.component';
@@ -21,7 +22,7 @@ import * as AOS from 'aos';
 import { PageComponent } from './components/page/page.component';
 import { ScrollIndicatorComponent } from './components/scroll-indicator/scroll-indicator.component';
 import { Routing } from './models/routing.enum';
-import { NavigationBarComponent } from "./components/navigation-bar/navigation-bar.component";
+import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 
 @Component({
   selector: 'app-root',
@@ -35,8 +36,8 @@ import { NavigationBarComponent } from "./components/navigation-bar/navigation-b
     ProjetDetailComponent,
     PageComponent,
     ScrollIndicatorComponent,
-    NavigationBarComponent
-],
+    NavigationBarComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -44,7 +45,10 @@ export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild(ScrollIndicatorComponent)
   scrollIndicatorComponent!: ScrollIndicatorComponent;
   selectedProject: Project | null = null;
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private ngZone: NgZone
+  ) {}
   title = 'portfolio';
   private defaultPrimaryBg = '#0c0f13';
   private defaultSecondaryBg = '#1a1d22';
@@ -56,7 +60,33 @@ export class AppComponent implements OnInit, AfterViewInit {
     if (isPlatformBrowser(this.platformId)) {
       AOS.init({ once: true, duration: 1000 });
     }
+    this.ngZone.runOutsideAngular(() => {
+      window.addEventListener('wheel', this.onWheel.bind(this), {
+        passive: true,
+      });
+    });
   }
+
+  private throttleDelay = 1000;
+  private scrollLocked = false;
+
+  onWheel(event: WheelEvent) {
+    if (this.selectedProject) return;
+    if (this.scrollLocked) return;
+    if ((event.target as HTMLElement).closest('.filters')) {
+      // If wheel happened inside a carousel, ignore it here
+      return;
+    }
+    if (Math.abs(event.deltaY) < 2) return;
+    this.scrollLocked = true;
+    if (event.deltaY > 2) {
+      this.onScrollDown();
+    } else if (event.deltaY < -2) {
+      this.onScrollUp();
+    }
+    setTimeout(() => (this.scrollLocked = false), this.throttleDelay);
+  }
+
   ngAfterViewInit() {
     AOS.refresh();
     this.selectedProject = null;
@@ -99,7 +129,8 @@ export class AppComponent implements OnInit, AfterViewInit {
 
       if (step >= steps) {
         clearInterval(interval);
-        if (propertyName === '--secondary-bg') this.currentSecondaryBg = endColor;
+        if (propertyName === '--secondary-bg')
+          this.currentSecondaryBg = endColor;
         if (propertyName === '--primary-bg') this.currentPrimaryBg = endColor;
       }
     }, intervalTime);
@@ -107,7 +138,8 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   moveToCurrentPage() {
     let el = this.pages.toArray()[this.selectedPageIndex].elRef.nativeElement;
-    this.disabledIndicator = !this.pages.toArray()[this.selectedPageIndex].showScrollIndicator;
+    this.disabledIndicator =
+      !this.pages.toArray()[this.selectedPageIndex].showScrollIndicator;
     this.showNavBar = this.pages.toArray()[this.selectedPageIndex].showNavBar;
     el.scrollIntoView({ behavior: 'smooth' });
     this.scrollIndicatorComponent.onResetTimer();
@@ -143,27 +175,6 @@ export class AppComponent implements OnInit, AfterViewInit {
       this.selectedPageIndex--;
       this.moveToCurrentPage();
     }
-  }
-  private throttleDelay = 1000;
-  private scrollLocked = false;
-
-  @HostListener('wheel', ['$event'])
-  onWheel(event: WheelEvent) {
-    if (this.selectedProject) return;
-    if ((event.target as HTMLElement).closest('.filters')) {
-      // If wheel happened inside a carousel, ignore it here
-      return;
-    }
-    event.preventDefault();
-    event.stopPropagation();
-    if (this.scrollLocked) return;
-    this.scrollLocked = true;
-    if (event.deltaY > 0) {
-      this.onScrollDown();
-    } else if (event.deltaY < 0) {
-      this.onScrollUp();
-    }
-    setTimeout(() => (this.scrollLocked = false), this.throttleDelay);
   }
 
   private lastTouchY: number | null = null;
