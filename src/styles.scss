@@ -118,7 +118,8 @@ body {
 
   /* Hide in-page custom scroll UI on small screens so native scrolling is used */
   #custom-scrollbar,
-  .scroll-indicator {
+  .scroll-indicator,
+  .navigation-bar {
     display: none !important;
     pointer-events: none !important;
   }

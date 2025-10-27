@@ -4,3 +4,9 @@
     overflow: hidden;
     display: flex;
 }
+@media (max-width: 768px) {
+  :host {
+    height: auto;
+    width: 100vw;
+  }
+}

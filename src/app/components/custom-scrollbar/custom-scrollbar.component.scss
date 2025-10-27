@@ -1,19 +1,36 @@
 #custom-scrollbar {
-    position: fixed;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px; 
-    padding: 20px;   
-    z-index: 9999;  
-    overflow-y: hidden;  
-    height: 100vh;  
-  
-    display: flex;     
-    flex-direction: column; 
-    justify-content: center; 
-    text-align: center;    
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  padding: 20px;
+  z-index: 9999;
+  overflow-y: hidden;
+  height: 100vh; /* desktop/large screens */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Disable fixed full-height scrollbar on small screens */
+@media (max-width: 768px) {
+  #custom-scrollbar {
+    position: static !important;
+    transform: none !important;
+    top: auto !important;
+    right: auto !important;
+    width: auto !important;
+    padding: 0 !important;
+    z-index: auto !important;
+    overflow: visible !important;
+    height: auto !important;
+    display: none !important; /* already hidden globally, but ensure it's not taking space */
+    pointer-events: none !important;
   }
+}
   
   #custom-scrollbar div {
     position: relative;             
