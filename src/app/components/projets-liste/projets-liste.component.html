@@ -22,7 +22,7 @@
   </div>
 </div>-->
 <div class="filters">
-  <div class="project-list" #scrollContainer>
+  <div class="project-list" #scrollContainer data-carousel>
     @for (project of filteredProjects(); track $index) {
     <app-projet
       [project]="project"

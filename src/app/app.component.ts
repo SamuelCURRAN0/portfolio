@@ -73,8 +73,8 @@ export class AppComponent implements OnInit, AfterViewInit {
   onWheel(event: WheelEvent) {
     if (this.selectedProject) return;
     if (this.scrollLocked) return;
-    if ((event.target as HTMLElement).closest('.filters')) {
-      // If wheel happened inside a carousel, ignore it here
+    // If wheel happened inside a carousel (precise target), ignore it here
+    if ((event.target as HTMLElement).closest('[data-carousel]')) {
       return;
     }
     if (Math.abs(event.deltaY) < 2) return;
@@ -178,36 +178,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   private lastTouchY: number | null = null;
-
-  /*@HostListener('touchmove', ['$event'])
-  onTouchMove(event: TouchEvent) {
-    if (this.selectedProject) return;
-    event.preventDefault();
-    event.stopPropagation();
-    if (this.scrollLocked) return;
-    this.scrollLocked = true;
-
-    // Detect scroll direction
-    if (event.touches && event.touches.length) {
-      const touch = event.touches[0];
-
-      if (!this.lastTouchY) {
-        this.lastTouchY = touch.clientY;
-      } else {
-        const deltaY = this.lastTouchY - touch.clientY;
-
-        if (deltaY > 0) {
-          this.onScrollDown();
-        } else if (deltaY < 0) {
-          this.onScrollUp();
-        }
-
-        this.lastTouchY = touch.clientY;
-      }
-    }
-
-    setTimeout(() => (this.scrollLocked = false), this.throttleDelay);
-  }*/
 
   modalClosed() {
     this.selectedProject = null;
