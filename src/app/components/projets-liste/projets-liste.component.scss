@@ -15,8 +15,28 @@
     padding-left: 50px;
     padding-right: 50px;
     align-items: center;
-    overflow-x: hidden;
+    overflow-x: auto; /* allow horizontal scroll on small/touch devices */
+    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+    scroll-behavior: smooth;
+    flex-wrap: nowrap; /* keep items in single row to enable horizontal scroll */
     height: auto;
+}
+
+/* Ensure project items don't shrink so they can be scrolled horizontally */
+.project-list > app-projet,
+.project-list > * {
+  flex: 0 0 auto;
+}
+
+/* Hide native scrollbar but keep touch/gesture scrolling */
+.project-list {
+  /* Firefox */
+  scrollbar-width: none;
+  /* IE 10+ and Edge */
+  -ms-overflow-style: none;
+}
+.project-list::-webkit-scrollbar {
+  height: 0; /* hide horizontal scrollbar in WebKit browsers */
 }
 .dropdown .dropdown-list {
     position: absolute;
