@@ -179,7 +179,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   private lastTouchY: number | null = null;
 
-  @HostListener('touchmove', ['$event'])
+  /*@HostListener('touchmove', ['$event'])
   onTouchMove(event: TouchEvent) {
     if (this.selectedProject) return;
     event.preventDefault();
@@ -207,7 +207,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
 
     setTimeout(() => (this.scrollLocked = false), this.throttleDelay);
-  }
+  }*/
 
   modalClosed() {
     this.selectedProject = null;

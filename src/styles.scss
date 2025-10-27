@@ -102,6 +102,35 @@ body {
   overflow: hidden;
 }
 
+/* Allow native scrolling on phones/small screens and hide custom scroll UI there */
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow: auto !important;
+    height: auto !important;
+    -webkit-overflow-scrolling: touch; /* smoother scrolling on iOS */
+  }
+
+  /* Restore native scrollbar appearance where possible */
+  body::-webkit-scrollbar {
+    display: initial;
+  }
+
+  /* Hide in-page custom scroll UI on small screens so native scrolling is used */
+  #custom-scrollbar,
+  .scroll-indicator {
+    display: none !important;
+    pointer-events: none !important;
+  }
+
+  /* If any components used fixed/height tricks for desktop scrolling, make them natural */
+  #custom-scrollbar {
+    position: static !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+}
+
 .normal-space {
   padding-top: 2vh;
   padding-bottom: 2vh;
